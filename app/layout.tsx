@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/navbar";
+import { Lato, Inter_Tight } from "next/font/google";
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-inter-tight",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${interTight.className} ${lato.className} font-sans`}>
         <NavBar />
         {children}
       </body>

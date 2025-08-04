@@ -115,12 +115,12 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-10 my-8">
-        <div className="container mx-auto px-6  flex items-center flex-col lg:flex-row gap-30 ">
+        <div className="container mx-auto px-6 text-[#121212] flex items-center flex-col lg:flex-row gap-30 ">
           <div className="flex-1 ">
-            <h2 className="text-[35px] mb-3 leading-tight font-bold">
+            <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
             </h2>
-            <p className="text-base font-[Lato]">
+            <p className="text-base font-[lato]">
               At Pacific Safety Solution, based in the vibrant city of Lagos,
               Nigeria, we specialize in providing top-tier safety equipment and
               fiberglass services. Our dedication to quality and innovation
@@ -159,13 +159,13 @@ export default function Home() {
           </div>
           <div className="relative z-20">
             <div className="flex flex-col gap-4 mb-6 items-start transition-all duration-500 ease-in-out">
-              <p className="text-sm font-semibold text-[#5200F5]">
+              <p className="text-sm font-semibold font-[lato] text-[#5200F5]">
                 Superior Protection
               </p>
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="font-bold text-5xl text-gray-900">
                 Advanced Safety Solutions Provider
               </h2>
-              <p className="text-base text-gray-900">
+              <p className="text-base font-[lato] text-[#121212]">
                 Discover cutting-edge fiberglass services and comprehensive
                 safety equipment solutions tailored to meet Lagos&apos; unique
                 industrial needs.
@@ -231,10 +231,10 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex flex-col items-start py-6 text-gray-900">
-                      <p className="text-xl font-semibold mb-4">
+                      <p className="text-3xl font-semibold mb-1">
                         {service.title}
                       </p>
-                      <p className="text-base">{service.desc}</p>
+                      <p className="text-base font-[lato]">{service.desc}</p>
                     </div>
                   </div>
                 </div>
