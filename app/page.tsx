@@ -3,6 +3,8 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 interface Slide {
   src: string;
@@ -31,6 +33,17 @@ export default function Home() {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
+
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoiZHVyYWJsZSIsImEiOiJjbGJjOHV1bHUwcjM5M3huOHdoZXdkdDRsIn0.geBkTZ4KBXWb669GQBr8rw";
+
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [3.3792, 6.5244],
+      zoom: 13, // Adjusted zoom level to be more zoomed in
+    });
+
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -341,33 +354,363 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
-          <form className="grid gap-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="p-3 rounded bg-white border border-gray-300"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="p-3 rounded bg-white border border-gray-300"
-            />
-            <textarea
-              rows={5}
-              placeholder="Your Message"
-              className="p-3 rounded bg-white border border-gray-300"
-            />
-            <button
-              type="submit"
-              className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800"
+      <section
+        className="relative pt-20 bg-gray-200"
+        style={{
+          clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+          WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+        }}
+      >
+        <div id="688e568afa86f3be48523168">
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div className="absolute inset-0 z-10 bg-[#f5f4f6]" />
+          </div>
+
+          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+            <div>
+              <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 flex flex-col gap-4 mb-6 items-start">
+                <p className="w-max max-w-full body-small !font-semibold text-[#0a001f]">
+                  Assured Safety
+                </p>
+                <h2 className="text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
+                  Delivering Trusted Safety Solutions
+                </h2>
+                <p className="font-[lato] text-lg lg:w-[80%] block  ml-0 mr-auto text-gray-900">
+                  At Pacific Safety Solutions, we prioritize unwavering
+                  integrity, innovation, and excellence to ensure ultimate
+                  protection and client satisfaction.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap relative justify-start gap-[40px]">
+                {[
+                  {
+                    title: "Commitment to Safety",
+                    content:
+                      "At Pacific safety solution, safety is not just a priority, it is our core mission. We are dedicated to providing top-notch safety equipment and services that ensure the well-being of our clients and their teams. Every product and service we offer is designed with the highest safety standards in mind.",
+                  },
+                  {
+                    title: "Quality Assurance",
+                    content:
+                      "Quality is at the heart of everything we do. Our fiber glass services and safety equipment are crafted with precision and care, ensuring durability and reliability. We adhere to strict quality control measures to guarantee that our clients receive only the best.",
+                  },
+                  {
+                    title: "Innovation",
+                    content:
+                      "We believe in the power of innovation to improve safety standards. Pacific safety solution is committed to staying at the forefront of technological advancements in the industry, constantly seeking new ways to enhance our products and services.",
+                  },
+                  {
+                    title: "Customer Focus",
+                    content:
+                      "Our clients are at the center of our operations. We strive to understand their unique needs and provide tailored solutions that exceed expectations. Our dedicated team is always ready to offer support and guidance, ensuring a seamless experience.",
+                  },
+                  {
+                    title: "Integrity",
+                    content:
+                      "Honesty and transparency are fundamental to our business practices. We build trust with our clients through open communication and by delivering on our promises. At Pacific safety solution, integrity is the foundation of our relationships.",
+                  },
+                ].map((card, index) => (
+                  <div
+                    key={index}
+                    className="group w-full relative overflow-hidden rounded-sm md:rounded-md lg:rounded-lg"
+                    style={{ flex: "0 0 calc(33.3333% - 26.6667px)" }}
+                  >
+                    <div
+                      className={`transition-all ease-in-out duration-500 delay-[${
+                        100 + index * 100
+                      }ms] opacity-100 translate-y-0 h-full`}
+                    >
+                      <div className="flex flex-col h-full rounded-sm md:rounded-md lg:rounded-lg">
+                        <div className="flex flex-col items-start py-6 text-gray-900">
+                          <h2 className="text-2xl font-bold  mb-2 ml-0 mr-auto text-current">
+                            {card.title}
+                          </h2>
+                          <div className="text-lg font-[lato] ml-0 mr-auto text-current">
+                            {card.content}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* SVG ClipPath */}
+          <svg
+            className="absolute bottom-0 left-0"
+            width="1449"
+            height="1206"
+            viewBox="0 0 1449 1206"
+          >
+            <clipPath id="688e568afa86f3be48523168-slantLeft">
+              <rect width="1449" height="1118" fill="transparent" />
+              <path
+                d="M1449 0L0 88V0H1449"
+                transform="translate(0, 1118)"
+                fill="transparent"
+              />
+            </clipPath>
+          </svg>
+        </div>
+      </section>
+
+      <section className="relative">
+        <div
+          className="relative flex min-h-screen z-30 -mt-[89px] pt-[89px] pb-[88px]"
+          style={{
+            clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+            WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+          }}
+        >
+          {/* Map Container */}
+          <div className="absolute inset-0 w-full">
+            <div className="h-full w-full absolute inset-0 z-5" id="map"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
+            <div className="flex flex-row w-full md:flex-row-reverse">
+              <div className="relative z-10 w-full md:w-1/2 xl:w-2/5 flex flex-col gap-6 p-6 lg:p-10 shadow overflow-hidden rounded-sm md:rounded-md lg:rounded-lg">
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                  <div className="absolute inset-0 z-10 bg-gray-100"></div>
+                </div>
+                <div className="relative z-10 flex flex-col gap-4">
+                  <h2 className="text-2xl font-bold text-gray-900 font-inter-tight">
+                    Location
+                  </h2>
+                  <p className="text-gray-900 font-lato">Lagos, Nigeria</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative">
+        <div
+          className="flex relative items-center break-words z-30 -mt-[89px] pt-[89px] pb-0"
+          style={{
+            scrollMarginTop: "5rem",
+            minHeight: "0px",
+          }}
+        >
+          <div className="flex justify-center w-full items-center break-words">
+            {/* Background Overlay */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+              <div className="absolute inset-0 z-10 bg-[#e0dde4]"></div>
+            </div>
+
+            {/* Content */}
+            <div
+              className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-12 lg:pb-20"
+              style={{
+                clipPath:
+                  "polygon(0 0, 100% 0, 100% 90%, 75% 100%, 50% 90%, 25% 100%, 0 90%)",
+                WebkitClipPath:
+                  "polygon(0 0, 100% 0, 100% 90%, 75% 100%, 50% 90%, 25% 100%, 0 90%)",
+              }}
             >
-              Send Message
-            </button>
-          </form>
+              <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 flex flex-col gap-4 max-w-3xl items-start ml-0 mr-auto text-left">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-inter-tight">
+                  Ensure Your Safety Today
+                </h2>
+                <p className="text-base md:text-lg text-gray-900 font-lato">
+                  Choose Pacific Safety Solution in Lagos for expert maintenance
+                  of safety equipment and fiberglass services. Secure your
+                  life-saving appliances with our reliable and professional
+                  care.
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <button
+                    type="button"
+                    className="px-6 py-3 border-2 shadow-none font-medium bg-[#5200f5] text-white rounded-lg border-[#5200f5]"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative">
+        <div
+          id="688e5691fa86f3be4852316b"
+          className="flex flex-none relative items-center fix-safari-flickering"
+          style={{
+            minHeight: "0px",
+            zIndex: 31,
+            scrollMarginTop: "5rem",
+            paddingTop: "0px",
+            paddingBottom: "88px",
+            clipPath: "url(#688e5691fa86f3be4852316b-curveDown)",
+          }}
+        >
+          {/* Purple Background Overlay */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div
+              className="absolute inset-0 z-10"
+              style={{ backgroundColor: "rgb(82, 0, 245)" }}
+            ></div>
+          </div>
+
+          {/* Image Content */}
+          <div className="relative z-10 container pt-12 lg:pt-20 pb-12 lg:pb-20 mx-auto">
+            <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 relative z-10  mx-auto overflow-hidden flex justify-center items-center">
+              <div className="relative overflow-hidden w-full aspect-[3/2] rounded-sm md:rounded-md lg:rounded-lg">
+                <Image
+                  alt="Lining process of coating tank and repair by resin and fiberglass"
+                  title="Lining process of coating tank and repair by resin and fiberglass"
+                  src="https://cdn.durable.co/getty/12e60MzVRJMlOoKWayW6ZTGeMGnzf5fdqOgjx7oi1piFsQNrvmI4DEQh6N5xCblx.jpeg"
+                  fill
+                  className="w-full h-[500px] object-cover object-center"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Clip Path SVG Definition (hidden) */}
+          <svg
+            className="absolute bottom-0 left-0"
+            width="1449"
+            height="1069"
+            viewBox="0 0 1449 1069"
+          >
+            <clipPath id="688e5691fa86f3be4852316b-curveDown">
+              <rect width="1449" height="981" fill="transparent" />
+              <path
+                d="M0 88 C724.5 0 724.5 0 1449 88 L1449 0 L0 0"
+                transform="translate(0, 981)"
+                fill="transparent"
+              />
+            </clipPath>
+          </svg>
+        </div>
+
+        {/* White stroke curve */}
+        <svg
+          className="absolute bottom-0 left-0 z-50 overflow-visible"
+          fill="transparent"
+          width="1449"
+          height="88"
+          viewBox="0 0 1449 88"
+        >
+          <path
+            d="M0 88 C724.5 0 724.5 0 1449 88"
+            stroke="#FFFFFF"
+            strokeWidth="2"
+          />
+        </svg>
+      </section>
+
+      {/* Contact Form */}
+      <section className="relative">
+        <div
+          id="688e5691fa86f3be4852316c"
+          className="flex flex-none flex-shrink-0 relative items-center -mt-[89px] pt-[89px] pb-0 z-[30]"
+        >
+          {/* Background overlay */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div className="absolute inset-0 z-10 bg-[#f5f4f6]"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+            <div className="transition-all duration-500 ease-in-out opacity-100 translate-y-0 flex flex-col w-full gap-10 max-w-3xl mx-auto">
+              {/* Heading */}
+              <div className="w-full text-center text-gray-900">
+                <h3 className="text-2xl font-bold">Reach Out to Our Team</h3>
+                <p className="mt-2">
+                  Contact Pacific Safety Solution in Lagos for expert safety
+                  equipment services.
+                </p>
+              </div>
+
+              {/* Form */}
+              <form className="w-full block" noValidate>
+                <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full mb-4">
+                  {/* Name */}
+                  <div>
+                    <label className="mb-1 text-sm text-gray-900 block">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      autoComplete="name"
+                      className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="mb-1 text-sm text-gray-900 block">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      autoComplete="email"
+                      className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div className="col-span-2">
+                    <label className="mb-1 text-sm text-gray-900 block">
+                      Message
+                    </label>
+                    <textarea
+                      rows={5}
+                      className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
+                    ></textarea>
+                  </div>
+                </div>
+
+                {/* Submit */}
+                <div className="flex flex-col justify-between gap-4 items-center text-center md:pt-4">
+                  <button
+                    type="submit"
+                    className="min-w-[9rem] mt-2 md:mt-0 border-2 border-gray-900 text-gray-900 rounded-full px-6 py-2"
+                  >
+                    Send Message
+                  </button>
+
+                  <div className="text-xs max-w-sm text-gray-500">
+                    This site is protected by reCAPTCHA and the Google{" "}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-gray-900"
+                    >
+                      Privacy Policy
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-gray-900"
+                    >
+                      Terms of Service
+                    </a>{" "}
+                    apply.
+                  </div>
+                </div>
+
+                {/* Invisible reCAPTCHA (can be moved to next.js middleware/backend) */}
+                <div className="hidden">
+                  <div>
+                    <div className="grecaptcha-badge">
+                      {/* Add reCAPTCHA script separately if needed */}
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
