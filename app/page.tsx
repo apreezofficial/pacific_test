@@ -120,7 +120,7 @@ export default function Home() {
             <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
             </h2>
-            <p className="text-base font-[lato]">
+            <p className="text-lg font-[lato]">
               At Pacific Safety Solution, based in the vibrant city of Lagos,
               Nigeria, we specialize in providing top-tier safety equipment and
               fiberglass services. Our dedication to quality and innovation
@@ -147,7 +147,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section
-        className="relative z-10"
+        className="relative pb-14 z-10"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
@@ -230,10 +230,10 @@ export default function Home() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
-                    <div className="flex flex-col items-start py-6 text-gray-900">
-                      <p className="text-3xl font-semibold mb-1">
+                    <div className="flex flex-col items-start py-4 text-gray-900">
+                      <h3 className="text-2xl font-semibold mb-1">
                         {service.title}
-                      </p>
+                      </h3>
                       <p className="text-base font-[lato]">{service.desc}</p>
                     </div>
                   </div>
@@ -249,8 +249,8 @@ export default function Home() {
       <section className="py-16 bg-white my-14 text-black text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Protect your workforce with Pacific Safety Solutions, Lagos' premier
-            choice for comprehensive safety equipment installation and
+            Protect your workforce with Pacific Safety Solutions, Lagos&apos;
+            premier choice for comprehensive safety equipment installation and
             maintenance. With unparalleled expertise, we ensure your safety
             systems are always up to standard. Choose us for reliable service
             and peace of mind in safeguarding your business environment from
@@ -260,48 +260,83 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                img: "https://cdn.durable.co/getty/2cQFrN4FQNcQxyKeYxdeBCTb3VivivTPkJwf5lsN4aTE2xEPjucNzAkW6m7FjYwJ.jpeg",
-                name: "Adewale Johnson",
-                quote:
-                  "Top-notch equipment and fiberglass service. Highly recommended!",
-              },
-              {
-                img: "https://cdn.durable.co/getty/4BTtFyncXAItYHV0Mv4aA0hYKRMYJ8QAh4lO8u11NCNTxfAH0H0xBe5It4HEpSOk.jpeg",
-                name: "Ngozi Okafor",
-                quote:
-                  "Exceptional service and top-quality gear. Reliable and trustworthy.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/19JcE3FyW9oyMVK85U5pjH9JVBKyZmbBncQSZjjf68D535RSKHGIYjBffzDlG7nS.jpeg",
-                name: "Chidi Nwosu",
-                quote:
-                  "The best safety company in Lagos. Excellent support and results.",
-              },
-            ].map((t, i) => (
-              <div
-                key={i}
-                className="bg-gray-100 p-6 rounded-lg text-left shadow"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+      <section className="relative">
+        <div
+          className="relative flex items-center fix-safari-flickering"
+          style={{
+            minHeight: "0px",
+            zIndex: 35,
+            scrollMarginTop: "5rem",
+            marginTop: "-89px",
+            paddingTop: "89px",
+            paddingBottom: "88px",
+            clipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)",
+            WebkitClipPath: "polygon(0 10%, 100% 0%, 100% 100%, 0 100%)",
+          }}
+        >
+          {/* Background */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div className="absolute inset-0 bg-[#5200f5] z-10" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+            <div className="flex flex-col gap-4 max-w-5xl mb-12 text-left text-white">
+              <p className="text-sm font-[lato] font-semibold">
+                Trusted Feedback
+              </p>
+              <h2 className="text-3xl lg:text-5xl  font-bold">
+                Proven Safety Solutions: Client Success Stories
+              </h2>
+              <pre className="text-base lg:w-[45%] font-[lato]">
+                &quot;Excellent service and top-quality safety equipment. Their
+                expertise in fiberglass solutions is unmatched in Lagos. Highly
+                recommended!&quot; - Ada N.
+              </pre>
+            </div>
+
+            {/* Testimonials Grid */}
+            <div className="flex flex-row gap-4">
+              {[
+                {
+                  name: "Adewale Johnson",
+                  quote:
+                    "Pacific Safety Solution exceeded my expectations with top-notch equipment and professional fiberglass services. Their team is incredibly knowledgeable and attentive to client needs. I highly recommend them to anyone seeking reliable safety solutions in Lagos.",
+                  image:
+                    "https://cdn.durable.co/getty/2cQFrN4FQNcQxyKeYxdeBCTb3VivivTPkJwf5lsN4aTE2xEPjucNzAkW6m7FjYwJ.jpeg",
+                },
+                {
+                  name: "Ngozi Okafor",
+                  quote:
+                    "Pacific Safety Solution impressed me with their exceptional service and high-quality safety equipment. The team’s expertise in fiberglass services was evident, and they were always ready to assist. A trustworthy company for all safety needs in Lagos!",
+                  image:
+                    "https://cdn.durable.co/getty/4BTtFyncXAItYHV0Mv4aA0hYKRMYJ8QAh4lO8u11NCNTxfAH0H0xBe5It4HEpSOk.jpeg",
+                },
+                {
+                  name: "Chidi Nwosu",
+                  quote:
+                    "I am thoroughly impressed by Pacific Safety Solution's dedication to providing top-tier safety equipment and fiberglass services. Their expertise and customer-focused approach set them apart in Lagos. It's always a pleasure working with such a reliable and professional team.",
+                  image:
+                    "https://cdn.durable.co/getty/19JcE3FyW9oyMVK85U5pjH9JVBKyZmbBncQSZjjf68D535RSKHGIYjBffzDlG7nS.jpeg",
+                },
+              ].map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-6 p-8 md:p-12 bg-[#7533f7] bg-opacity-20 rounded-lg font-[lato] text-[#fafafa] max-w-2xl"
+                >
+                  <div className="relative  w-24 h-24 rounded-full overflow-hidden">
                     <Image
-                      src={t.img}
-                      alt={t.name}
+                      src={testimonial.image}
+                      alt={`- ${testimonial.name}`}
                       fill
                       className="object-cover"
                     />
                   </div>
-                  <strong>{t.name}</strong>
+                  <h3 className="text-lg font-medium">{testimonial.quote}</h3>
+                  <p className="text-base">- {testimonial.name}</p>
                 </div>
-                <p className="text-sm text-gray-700">{t.quote}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
