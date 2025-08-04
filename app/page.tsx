@@ -38,7 +38,7 @@ export default function Home() {
     <div className="min-h-screen overflow-x-hidden bg-white text-black">
       {/* Hero Section */}
       <section
-        className="relative w-full"
+        className="relative lg:h-[780px] w-full"
         style={{
           clipPath:
             "polygon(0 0, 100% 0, 100% 90%, 75% 100%, 50% 90%, 25% 100%, 0 90%)",
@@ -82,7 +82,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="relative z-20 container mx-auto px-5 md:px-6 pt-20 lg:pt-48 pb-20 lg:pb-48 flex items-center justify-center h-full">
+          <div className="relative z-20 container mx-auto px-5 md:px-6 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
             <div className="flex flex-col gap-4 w-full max-w-2xl items-start">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
                 Reliable Protection, Exceptional Quality
@@ -114,27 +114,31 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1 max-w-3xl">
-            <h2 className="text-3xl font-bold mb-4">
+      <section className="py-10 my-8">
+        <div className="container mx-auto px-6  flex items-center flex-col lg:flex-row gap-30 ">
+          <div className="flex-1 ">
+            <h2 className="text-[35px] mb-3 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
             </h2>
-            <p className="text-base">
+            <p className="text-base font-[Lato]">
               At Pacific Safety Solution, based in the vibrant city of Lagos,
               Nigeria, we specialize in providing top-tier safety equipment and
               fiberglass services. Our dedication to quality and innovation
               ensures that each product meets stringent safety standards and
-              client needs.
+              client needs. We are committed to safeguarding your work
+              environment with reliable solutions that offer peace of mind.
+              Trust us to deliver excellence, as we continue our mission to
+              enhance workplace safety across diverse industries.
             </p>
           </div>
           <div className="flex-1">
-            <div className="relative aspect-[3/2] w-full rounded-lg overflow-hidden">
+            <div className="relative  w-full rounded-lg overflow-hidden">
               <Image
                 src="https://cdn.durable.co/getty/9BfjXA2YUluml0DCPeiy3aKM1CxWY8gGRC7OfxNunJsHiaAVEKeu3Wz1nSYjMAuv.jpeg"
                 alt="Technician adjusting safety glasses"
-                fill
-                className="object-cover"
+                width={500}
+                height={500}
+                className="object-cover w-full h-[320px]"
               />
             </div>
           </div>
@@ -142,80 +146,116 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
-                alt: "Safety",
-                title: "Comprehensive Safety Gear",
-                desc: "A wide range of PPE tailored for various industries.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/12yaDDuDKunq8LglX5cl3XoxeF1tpy8uvyAVOqaVAeP68fyvDzLpumFt698Qagta.jpeg",
-                alt: "Fiberglass worker",
-                title: "Custom Fiberglass Fabrication",
-                desc: "Expertly crafted solutions for client-specific needs.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/2365A921vhl4BTnax8B2IXXa1T3hQkO8VPAXaTSFRPGiTeONPGoXitTwYykajzza.jpeg",
-                alt: "Work safety",
-                title: "On-site Safety Assessments",
-                desc: "Risk identification and workplace hazard mitigation.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/304091XtHsFriQD8DMXa1FDFRnGB7nYdRxc5Mm743WF47i2XaLH2K4bfuCx1Gkox.jpeg",
-                alt: "Fire training dummy",
-                title: "Emergency Response Training",
-                desc: "Prepare teams to respond effectively to emergencies.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/12H5mT1ZeSnKWoqX2Y4i9cpbGHjUvAfu9FZKKPiif9kx5CDXUO9SPK2toSek1DMM.jpeg",
-                alt: "Extinguisher",
-                title: "Durable Equipment Supply",
-                desc: "High-quality, long-lasting protective equipment.",
-              },
-              {
-                img: "https://cdn.durable.co/getty/9RFSqoYan5ukTG0ZpmS0dxpDkq3cwdRGwm6UZsEUnbzONgXbOu6wCw8vw160YGnt.jpeg",
-                alt: "Machine worker",
-                title: "Maintenance & Repair",
-                desc: "Regular upkeep to ensure safety gear effectiveness.",
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md"
-              >
-                <div className="relative aspect-square w-full">
-                  <Image
-                    src={service.img}
-                    alt={service.alt}
-                    fill
-                    className="object-cover"
-                  />
+      <section
+        className="relative z-10"
+        style={{
+          clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+          WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+        }}
+      >
+        <div className="container mx-auto px-6 pt-16 lg:pt-32 pb-0">
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div className="absolute inset-0 bg-gray-200"></div>
+          </div>
+          <div className="relative z-20">
+            <div className="flex flex-col gap-4 mb-6 items-start transition-all duration-500 ease-in-out">
+              <p className="text-sm font-semibold text-[#5200F5]">
+                Superior Protection
+              </p>
+              <h2 className="text-3xl font-bold text-gray-900">
+                Advanced Safety Solutions Provider
+              </h2>
+              <p className="text-base text-gray-900">
+                Discover cutting-edge fiberglass services and comprehensive
+                safety equipment solutions tailored to meet Lagos&apos; unique
+                industrial needs.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-start gap-10">
+              {[
+                {
+                  img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
+                  alt: "Safety",
+                  title: "Comprehensive Safety Gear",
+                  desc: "Offering a wide range of personal protective equipment tailored for various industries.",
+                },
+                {
+                  img: "https://cdn.durable.co/getty/12yaDDuDKunq8LglX5cl3XoxeF1tpy8uvyAVOqaVAeP68fyvDzLpumFt698Qagta.jpeg",
+                  alt: "Worker at fibreglass factory rolling solution through fibreglass sheets",
+                  title: "Custom Fiberglass Fabrication",
+                  desc: "Expertly crafted fiberglass solutions designed to meet specific client needs.",
+                },
+                {
+                  img: "https://cdn.durable.co/getty/2365A921vhl4BTnax8B2IXXa1T3hQkO8VPAXaTSFRPGiTeONPGoXitTwYykajzza.jpeg",
+                  alt: "Work safety protection equipment. Industrial protective gear on wooden table, red color background.",
+                  title: "On-site Safety Assessments",
+                  desc: "Professional evaluation of workplace safety to identify and mitigate risks.",
+                },
+                {
+                  img: "https://cdn.durable.co/getty/304091XtHsFriQD8DMXa1FDFRnGB7nYdRxc5Mm743WF47i2XaLH2K4bfuCx1Gkox.jpeg",
+                  alt: "Fire Fighter Rescue Training Dummy",
+                  title: "Emergency Response Training",
+                  desc: "Hands-on training sessions to prepare teams for emergency situations.",
+                },
+                {
+                  img: "https://cdn.durable.co/getty/12H5mT1ZeSnKWoqX2Y4i9cpbGHjUvAfu9FZKKPiif9kx5CDXUO9SPK2toSek1DMM.jpeg",
+                  alt: "Fire extinguisher and a protective helmet.",
+                  title: "Durable Equipment Supply",
+                  desc: "Providing high-quality, long-lasting safety equipment to ensure maximum protection.",
+                },
+                {
+                  img: "https://cdn.durable.co/getty/9RFSqoYan5ukTG0ZpmS0dxpDkq3cwdRGwm6UZsEUnbzONgXbOu6wCw8vw160YGnt.jpeg",
+                  alt: "Worker Adjusting Machine with Wrench",
+                  title: "Maintenance and Repair Services",
+                  desc: "Regular maintenance and repair of safety gear to ensure optimal performance.",
+                },
+              ].map((service, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-sm md:rounded-md lg:rounded-lg transition-all duration-500 ease-in-out"
+                  style={{ flex: "0 0 calc(33.3333% - 26.6667px)" }}
+                >
+                  <div
+                    className={`transition-all duration-500 ease-in-out delay-${
+                      (index + 1) * 100
+                    } opacity-100 translate-y-0 h-full flex flex-col`}
+                  >
+                    <div className="relative aspect-square">
+                      <Image
+                        src={service.img}
+                        alt={service.alt}
+                        title={service.title}
+                        fill
+                        className="object-cover object-center rounded-sm md:rounded-md lg:rounded-lg"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <div className="flex flex-col items-start py-6 text-gray-900">
+                      <p className="text-xl font-semibold mb-4">
+                        {service.title}
+                      </p>
+                      <p className="text-base">{service.desc}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg mb-2">{service.title}</h3>
-                  <p className="text-sm">{service.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+        <div></div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-black text-white text-center">
+      <section className="py-16 bg-white my-14 text-black text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Protect your workforce with Pacific Safety Solutions
+            Protect your workforce with Pacific Safety Solutions, Lagos' premier
+            choice for comprehensive safety equipment installation and
+            maintenance. With unparalleled expertise, we ensure your safety
+            systems are always up to standard. Choose us for reliable service
+            and peace of mind in safeguarding your business environment from
+            potential hazards.
           </h2>
-          <p className="text-base max-w-2xl mx-auto">
-            Lagos’ premier provider of safety equipment, fiberglass
-            installation, and emergency solutions.
-          </p>
         </div>
       </section>
 
