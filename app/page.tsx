@@ -48,7 +48,7 @@ export default function Home() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white text-black">
+    <div className="min-h-screen sm:mx-2 overflow-x-hidden bg-white text-black">
       {/* Hero Section */}
       <section
         className="relative lg:h-[780px] w-full"
@@ -64,9 +64,9 @@ export default function Home() {
             className="absolute inset-0 z-0"
             style={{
               clipPath:
-                "polygon(0 0, 100% 0, 100% 90%, 66.66% 100%, 33.33% 90%, 0 100%)",
+                "polygon(0 0, 100% 0, 100% 90%, 40.66% 100%, 33.33% 90%, 0 100%)",
               WebkitClipPath:
-                "polygon(0 0, 100% 0, 100% 90%, 66.66% 100%, 33.33% 90%, 0 100%)",
+                "polygon(0 0, 80% 0, 100% 90%, 40.66% 100%, 33.33% 90%, 0 100%)",
             }}
           >
             {slides.map((slide, index) => (
@@ -128,7 +128,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-10 my-8">
-        <div className="container mx-auto px-6 text-[#121212] flex items-center flex-col lg:flex-row gap-30 ">
+        <div className="container mx-auto px-6 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
           <div className="flex-1 ">
             <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
@@ -160,13 +160,13 @@ export default function Home() {
 
       {/* Services Section */}
       <section
-        className="relative pb-14 z-10"
+        className="relative pb-10 z-10"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="container mx-auto px-6 pt-16 lg:pt-32 pb-0">
+        <div className="container mx-auto px-6 pt-80 lg:pt-32 pb-0">
           <div className="absolute inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 bg-gray-200"></div>
           </div>
@@ -184,7 +184,7 @@ export default function Home() {
                 industrial needs.
               </p>
             </div>
-            <div className="flex flex-wrap justify-start gap-10">
+            <div className="flex flex-col lg:flex-wrap justify-start gap-10">
               {[
                 {
                   img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
@@ -288,12 +288,12 @@ export default function Home() {
           }}
         >
           {/* Background */}
-          <div className="absolute inset-0 z-10 pointer-events-none">
+          <div className="absolute  inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 bg-[#5200f5] z-10" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative px-4 z-10 container mx-auto  pt-30 lg:pt-32 pb-16 lg:pb-32">
             <div className="flex flex-col gap-4 max-w-5xl mb-12 text-left text-white">
               <p className="text-sm font-[lato] font-semibold">
                 Trusted Feedback
@@ -309,7 +309,7 @@ export default function Home() {
             </div>
 
             {/* Testimonials Grid */}
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col lg:flex-row gap-4">
               {[
                 {
                   name: "Adewale Johnson",
@@ -355,7 +355,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative pt-20 bg-gray-200"
+        className="relative px-3 pt-20 mb-14 sm:mb-10 bg-gray-200"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
@@ -382,7 +382,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap relative justify-start gap-[40px]">
+              <div className="flex flex-col lg:flex-wrap relative justify-start gap-[40px]">
                 {[
                   {
                     title: "Commitment to Safety",
@@ -456,7 +456,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative">
+      <section className="relative ">
         <div
           className="relative flex min-h-screen z-30 -mt-[89px] pt-[89px] pb-[88px]"
           style={{
@@ -470,14 +470,14 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
+          <div className="relative z-10 px-2 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
             <div className="flex flex-row w-full md:flex-row-reverse">
               <div className="relative z-10 w-full md:w-1/2 xl:w-2/5 flex flex-col gap-6 p-6 lg:p-10 shadow overflow-hidden rounded-sm md:rounded-md lg:rounded-lg">
-                <div className="absolute inset-0 z-10 pointer-events-none">
+                <div className="absolute inset-0 z-10  pointer-events-none">
                   <div className="absolute inset-0 z-10 bg-gray-100"></div>
                 </div>
                 <div className="relative z-10 flex flex-col gap-4">
-                  <h2 className="text-2xl font-bold text-gray-900 font-inter-tight">
+                  <h2 className="text-2xl  font-bold text-gray-900 font-inter-tight">
                     Location
                   </h2>
                   <p className="text-gray-900 font-lato">Lagos, Nigeria</p>
@@ -496,10 +496,10 @@ export default function Home() {
             minHeight: "0px",
           }}
         >
-          <div className="flex justify-center w-full items-center break-words">
+          <div className="flex  px-6 justify-center w-full items-center break-words">
             {/* Background Overlay */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <div className="absolute inset-0 z-10 bg-[#e0dde4]"></div>
+              <div className="absolute inset-0 z-10 sm:w-fit bg-[#e0dde4]"></div>
             </div>
 
             {/* Content */}
@@ -558,7 +558,7 @@ export default function Home() {
           </div>
 
           {/* Image Content */}
-          <div className="relative z-10 container pt-12 lg:pt-20 pb-12 lg:pb-20 mx-auto">
+          <div className="relative z-10 px-4 container pt-12 lg:pt-20 pb-12 lg:pb-20 mx-auto">
             <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 relative z-10  mx-auto overflow-hidden flex justify-center items-center">
               <div className="relative overflow-hidden w-full aspect-[3/2] rounded-sm md:rounded-md lg:rounded-lg">
                 <Image
@@ -618,7 +618,7 @@ export default function Home() {
             <div className="absolute inset-0 z-10 bg-[#f5f4f6]"></div>
           </div>
 
-          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative z-10 px-6 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
             <div className="transition-all duration-500 ease-in-out opacity-100 translate-y-0 flex flex-col w-full gap-10 max-w-3xl mx-auto">
               {/* Heading */}
               <div className="w-full text-center text-gray-900">
