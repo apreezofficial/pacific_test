@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, Info, Briefcase, Star, Heart, Phone } from "lucide-react";
 import Image from "next/image";
 
@@ -9,6 +9,15 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  // Prevent page scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [menuOpen]);
 
   return (
     <header className="sticky top-0 z-[2000] bg-[#5200f5] text-white transition-colors duration-300">
@@ -87,11 +96,11 @@ export default function NavBar() {
         </nav>
       </div>
 
-      {/* Overlay for closing menu */}
+      {/* Transparent click area to close menu (no dark overlay) */}
       {menuOpen && (
         <div
           onClick={toggleMenu}
-          className="fixed inset-0 bg-black bg-opacity-50 z-[2500] lg:hidden"
+          className="fixed inset-0 z-[2500] lg:hidden"
         />
       )}
     </header>
