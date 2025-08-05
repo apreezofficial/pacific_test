@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import Link from "next/link";
 
 interface Slide {
   src: string;
@@ -14,15 +15,15 @@ interface Slide {
 export default function Home() {
   const slides: Slide[] = [
     {
-      src: "https://cdn.durable.co/getty/9qn7UCReFTR8LXRaMYwsrGLqSOxMDDjY8FngelWDs2ESH3SyEpGVEEyUZyiEcs9w.jpeg",
+      src: "/images/hero-image-2.jpg",
       alt: "Close up technician engineer wearing and adjust protective safety glasses.",
     },
     {
-      src: "https://cdn.durable.co/getty/9gNM7vg62T4ZvtTcKfMkjGA4kFiyIbTCRqcx0kUbiYXALxicpVgvoMj6BnyKIWWV.jpeg",
+      src: "/images/hero-image-1.jpg",
       alt: "Fire extinguisher and a protective helmet.",
     },
     {
-      src: "https://cdn.durable.co/getty/9B7dc7HFBO2b2Grnrt6TXVrbLB8FLBBUnaKoVKhpF17j6MxDVHKupN7r2z7dnU1e.jpeg",
+      src: "/images/hero-image-3.jpg",
       alt: "Selective focus at safety hardhat in the factory production line.",
     },
   ];
@@ -147,7 +148,7 @@ export default function Home() {
           <div className="flex-1">
             <div className="relative  w-full rounded-lg overflow-hidden">
               <Image
-                src="https://cdn.durable.co/getty/9BfjXA2YUluml0DCPeiy3aKM1CxWY8gGRC7OfxNunJsHiaAVEKeu3Wz1nSYjMAuv.jpeg"
+                src="/images/hero-image-2.jpg"
                 alt="Technician adjusting safety glasses"
                 width={500}
                 height={500}
@@ -188,37 +189,37 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-start gap-10">
               {[
                 {
-                  img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
+                  img: "/images/helment.jpg",
                   alt: "Safety",
                   title: "Comprehensive Safety Gear",
                   desc: "Offering a wide range of personal protective equipment tailored for various industries.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/12yaDDuDKunq8LglX5cl3XoxeF1tpy8uvyAVOqaVAeP68fyvDzLpumFt698Qagta.jpeg",
+                  img: "/images/glove.jpg",
                   alt: "Worker at fibreglass factory rolling solution through fibreglass sheets",
                   title: "Custom Fiberglass Fabrication",
                   desc: "Expertly crafted fiberglass solutions designed to meet specific client needs.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/2365A921vhl4BTnax8B2IXXa1T3hQkO8VPAXaTSFRPGiTeONPGoXitTwYykajzza.jpeg",
+                  img: "/images/headset.jpg",
                   alt: "Work safety protection equipment. Industrial protective gear on wooden table, red color background.",
                   title: "On-site Safety Assessments",
                   desc: "Professional evaluation of workplace safety to identify and mitigate risks.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/304091XtHsFriQD8DMXa1FDFRnGB7nYdRxc5Mm743WF47i2XaLH2K4bfuCx1Gkox.jpeg",
+                  img: "/images/worker.jpg",
                   alt: "Fire Fighter Rescue Training Dummy",
                   title: "Emergency Response Training",
                   desc: "Hands-on training sessions to prepare teams for emergency situations.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/12H5mT1ZeSnKWoqX2Y4i9cpbGHjUvAfu9FZKKPiif9kx5CDXUO9SPK2toSek1DMM.jpeg",
+                  img: "/images/helment-2.jpg",
                   alt: "Fire extinguisher and a protective helmet.",
                   title: "Durable Equipment Supply",
                   desc: "Providing high-quality, long-lasting safety equipment to ensure maximum protection.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/9RFSqoYan5ukTG0ZpmS0dxpDkq3cwdRGwm6UZsEUnbzONgXbOu6wCw8vw160YGnt.jpeg",
+                  img: "/images/glove-2.jpg",
                   alt: "Worker Adjusting Machine with Wrench",
                   title: "Maintenance and Repair Services",
                   desc: "Regular maintenance and repair of safety gear to ensure optimal performance.",
@@ -316,22 +317,19 @@ export default function Home() {
                   name: "Adewale Johnson",
                   quote:
                     "Pacific Safety Solution exceeded my expectations with top-notch equipment and professional fiberglass services. Their team is incredibly knowledgeable and attentive to client needs. I highly recommend them to anyone seeking reliable safety solutions in Lagos.",
-                  image:
-                    "https://cdn.durable.co/getty/2cQFrN4FQNcQxyKeYxdeBCTb3VivivTPkJwf5lsN4aTE2xEPjucNzAkW6m7FjYwJ.jpeg",
+                  image: "/images/feedback-2.jpg",
                 },
                 {
                   name: "Ngozi Okafor",
                   quote:
                     "Pacific Safety Solution impressed me with their exceptional service and high-quality safety equipment. The team’s expertise in fiberglass services was evident, and they were always ready to assist. A trustworthy company for all safety needs in Lagos!",
-                  image:
-                    "https://cdn.durable.co/getty/4BTtFyncXAItYHV0Mv4aA0hYKRMYJ8QAh4lO8u11NCNTxfAH0H0xBe5It4HEpSOk.jpeg",
+                  image: "/images/feedback.jpg",
                 },
                 {
                   name: "Chidi Nwosu",
                   quote:
                     "I am thoroughly impressed by Pacific Safety Solution's dedication to providing top-tier safety equipment and fiberglass services. Their expertise and customer-focused approach set them apart in Lagos. It's always a pleasure working with such a reliable and professional team.",
-                  image:
-                    "https://cdn.durable.co/getty/19JcE3FyW9oyMVK85U5pjH9JVBKyZmbBncQSZjjf68D535RSKHGIYjBffzDlG7nS.jpeg",
+                  image: "/images/feedback-1.jpg",
                 },
               ].map((testimonial, index) => (
                 <div
@@ -529,7 +527,7 @@ export default function Home() {
                     type="button"
                     className="px-6 py-3 border-2 shadow-none font-medium bg-[#5200f5] text-white rounded-lg border-[#5200f5]"
                   >
-                    Contact Us
+                    <Link href="/#contact"> Contact Us</Link>
                   </button>
                 </div>
               </div>
@@ -566,7 +564,7 @@ export default function Home() {
                 <Image
                   alt="Lining process of coating tank and repair by resin and fiberglass"
                   title="Lining process of coating tank and repair by resin and fiberglass"
-                  src="https://cdn.durable.co/getty/12e60MzVRJMlOoKWayW6ZTGeMGnzf5fdqOgjx7oi1piFsQNrvmI4DEQh6N5xCblx.jpeg"
+                  src="/images/drilling.jpg"
                   fill
                   className="w-full h-[500px] object-cover object-center"
                   priority

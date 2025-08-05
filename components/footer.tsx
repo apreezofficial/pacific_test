@@ -13,11 +13,10 @@ export default function Footer() {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto pt-8 lg:pt-12 pb-8 lg:pb-12">
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
-            {/* Left: Logo + Placeholder for future content */}
+          <div className="flex flex-col ">
             <div className="flex items-center justify-center">
               <Link href="/" className="grid max-w-full">
-                <h2 className="text-xl text-center font-[lato] lg:text-3xl font-semibold leading-none text-gray-800">
+                <h2 className="text-xl text-center font-[lato]  font-semibold leading-none text-gray-800">
                   © Pacific safety solution 2025
                 </h2>
               </Link>
