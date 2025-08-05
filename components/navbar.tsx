@@ -42,14 +42,14 @@ export default function NavBar() {
           className="lg:hidden focus:outline-none"
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Fullscreen Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden px-6 pb-6">
-          <nav className="flex flex-col gap-4 text-sm font-medium">
+        <div className="fixed inset-0 z-[1999] bg-[#5200f5] text-white flex flex-col justify-center items-center transition-all duration-300 ease-in-out">
+          <nav className="flex flex-col items-center space-y-8 text-2xl font-semibold">
             <Link
               href="#about"
               onClick={toggleMenu}
@@ -86,6 +86,13 @@ export default function NavBar() {
               Contact
             </Link>
           </nav>
+
+          <button
+            onClick={toggleMenu}
+            className="mt-12 text-sm underline hover:text-gray-300 transition"
+          >
+            Close Menu
+          </button>
         </div>
       )}
     </header>
