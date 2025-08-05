@@ -17,7 +17,7 @@ export default function NavBar() {
           <Image
             width={200}
             height={200}
-            className="w-6 lg:w-8 h-auto"
+            className="w-6 lg:w-6 h-auto"
             src="/images/logo.png"
             alt="logo"
           />
