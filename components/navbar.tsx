@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,9 +13,17 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-[2000] bg-[#5200f5] text-white transition-colors duration-300">
       <div className="container mx-auto px-6 lg:px-12 py-6 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-xl lg:text-2xl font-bold truncate">
-          Pacific Safety Solution
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            width={200}
+            height={200}
+            className="w-6 lg:w-6 h-auto"
+            src="/images/logo.png"
+            alt="logo"
+          />
+          <p className="text-xl  lg:text-2xl font-bold truncate">
+            Pacific Safety Solution
+          </p>
         </Link>
 
         {/* Desktop Nav */}

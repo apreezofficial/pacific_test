@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import Link from "next/link";
 
 interface Slide {
   src: string;
@@ -14,15 +15,15 @@ interface Slide {
 export default function Home() {
   const slides: Slide[] = [
     {
-      src: "https://cdn.durable.co/getty/9qn7UCReFTR8LXRaMYwsrGLqSOxMDDjY8FngelWDs2ESH3SyEpGVEEyUZyiEcs9w.jpeg",
+      src: "/images/hero-image-2.jpg",
       alt: "Close up technician engineer wearing and adjust protective safety glasses.",
     },
     {
-      src: "https://cdn.durable.co/getty/9gNM7vg62T4ZvtTcKfMkjGA4kFiyIbTCRqcx0kUbiYXALxicpVgvoMj6BnyKIWWV.jpeg",
+      src: "/images/hero-image-1.jpg",
       alt: "Fire extinguisher and a protective helmet.",
     },
     {
-      src: "https://cdn.durable.co/getty/9B7dc7HFBO2b2Grnrt6TXVrbLB8FLBBUnaKoVKhpF17j6MxDVHKupN7r2z7dnU1e.jpeg",
+      src: "/images/hero-image-3.jpg",
       alt: "Selective focus at safety hardhat in the factory production line.",
     },
   ];
@@ -41,14 +42,14 @@ export default function Home() {
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [3.3792, 6.5244],
-      zoom: 13, // Adjusted zoom level to be more zoomed in
+      zoom: 13,
     });
 
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen sm:mx-2 overflow-x-hidden bg-white text-black">
+    <div className="min-h-screen  overflow-x-hidden bg-white text-black">
       {/* Hero Section */}
       <section
         className="relative lg:h-[780px] w-full"
@@ -95,7 +96,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="relative z-20 container mx-auto px-5 md:px-6 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
+          <div className="relative z-20 container mx-auto px-5 md:px-6  lg:px-0 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
             <div className="flex flex-col gap-4 w-full max-w-2xl items-start">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
                 Reliable Protection, Exceptional Quality
@@ -106,7 +107,7 @@ export default function Home() {
                 excellence.
               </p>
               <div className="flex flex-col md:flex-row gap-4 mt-4">
-                <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
+                <button className="bg-white text-black  px-6 lg:px-0 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
                   Explore Our Services
                 </button>
               </div>
@@ -128,7 +129,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-10 my-8">
-        <div className="container mx-auto px-6 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
+        <div className="container mx-auto  px-6 lg:px-0 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
           <div className="flex-1 ">
             <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
@@ -147,7 +148,7 @@ export default function Home() {
           <div className="flex-1">
             <div className="relative  w-full rounded-lg overflow-hidden">
               <Image
-                src="https://cdn.durable.co/getty/9BfjXA2YUluml0DCPeiy3aKM1CxWY8gGRC7OfxNunJsHiaAVEKeu3Wz1nSYjMAuv.jpeg"
+                src="/images/hero-image-2.jpg"
                 alt="Technician adjusting safety glasses"
                 width={500}
                 height={500}
@@ -160,13 +161,14 @@ export default function Home() {
 
       {/* Services Section */}
       <section
+        id="services"
         className="relative pb-10 z-10"
         style={{
           clipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="container mx-auto px-6 pt-30 lg:pt-32 pb-0">
+        <div className="container mx-auto px-6 lg:px-0 pt-30 lg:pt-32 pb-0">
           <div className="absolute inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 bg-gray-200"></div>
           </div>
@@ -187,37 +189,37 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 justify-start gap-10">
               {[
                 {
-                  img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
+                  img: "/images/helment.jpg",
                   alt: "Safety",
                   title: "Comprehensive Safety Gear",
                   desc: "Offering a wide range of personal protective equipment tailored for various industries.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/12yaDDuDKunq8LglX5cl3XoxeF1tpy8uvyAVOqaVAeP68fyvDzLpumFt698Qagta.jpeg",
+                  img: "/images/glove.jpg",
                   alt: "Worker at fibreglass factory rolling solution through fibreglass sheets",
                   title: "Custom Fiberglass Fabrication",
                   desc: "Expertly crafted fiberglass solutions designed to meet specific client needs.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/2365A921vhl4BTnax8B2IXXa1T3hQkO8VPAXaTSFRPGiTeONPGoXitTwYykajzza.jpeg",
+                  img: "/images/headset.jpg",
                   alt: "Work safety protection equipment. Industrial protective gear on wooden table, red color background.",
                   title: "On-site Safety Assessments",
                   desc: "Professional evaluation of workplace safety to identify and mitigate risks.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/304091XtHsFriQD8DMXa1FDFRnGB7nYdRxc5Mm743WF47i2XaLH2K4bfuCx1Gkox.jpeg",
+                  img: "/images/worker.jpg",
                   alt: "Fire Fighter Rescue Training Dummy",
                   title: "Emergency Response Training",
                   desc: "Hands-on training sessions to prepare teams for emergency situations.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/12H5mT1ZeSnKWoqX2Y4i9cpbGHjUvAfu9FZKKPiif9kx5CDXUO9SPK2toSek1DMM.jpeg",
+                  img: "/images/helment-2.jpg",
                   alt: "Fire extinguisher and a protective helmet.",
                   title: "Durable Equipment Supply",
                   desc: "Providing high-quality, long-lasting safety equipment to ensure maximum protection.",
                 },
                 {
-                  img: "https://cdn.durable.co/getty/9RFSqoYan5ukTG0ZpmS0dxpDkq3cwdRGwm6UZsEUnbzONgXbOu6wCw8vw160YGnt.jpeg",
+                  img: "/images/glove-2.jpg",
                   alt: "Worker Adjusting Machine with Wrench",
                   title: "Maintenance and Repair Services",
                   desc: "Regular maintenance and repair of safety gear to ensure optimal performance.",
@@ -260,7 +262,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="py-16 bg-white my-14 text-black text-center">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6  lg:px-0">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Protect your workforce with Pacific Safety Solutions, Lagos&apos;
             premier choice for comprehensive safety equipment installation and
@@ -273,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative">
+      <section id="testimonials" className="relative">
         <div
           className="relative flex items-center fix-safari-flickering"
           style={{
@@ -293,7 +295,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative px-4 z-10 container mx-auto  pt-30 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative px-4 lg:px-0 z-10 container mx-auto  pt-30 lg:pt-32 pb-16 lg:pb-32">
             <div className="flex flex-col gap-4 max-w-5xl mb-12 text-left text-white">
               <p className="text-sm font-[lato] font-semibold">
                 Trusted Feedback
@@ -315,22 +317,19 @@ export default function Home() {
                   name: "Adewale Johnson",
                   quote:
                     "Pacific Safety Solution exceeded my expectations with top-notch equipment and professional fiberglass services. Their team is incredibly knowledgeable and attentive to client needs. I highly recommend them to anyone seeking reliable safety solutions in Lagos.",
-                  image:
-                    "https://cdn.durable.co/getty/2cQFrN4FQNcQxyKeYxdeBCTb3VivivTPkJwf5lsN4aTE2xEPjucNzAkW6m7FjYwJ.jpeg",
+                  image: "/images/feedback-2.jpg",
                 },
                 {
                   name: "Ngozi Okafor",
                   quote:
                     "Pacific Safety Solution impressed me with their exceptional service and high-quality safety equipment. The team’s expertise in fiberglass services was evident, and they were always ready to assist. A trustworthy company for all safety needs in Lagos!",
-                  image:
-                    "https://cdn.durable.co/getty/4BTtFyncXAItYHV0Mv4aA0hYKRMYJ8QAh4lO8u11NCNTxfAH0H0xBe5It4HEpSOk.jpeg",
+                  image: "/images/feedback.jpg",
                 },
                 {
                   name: "Chidi Nwosu",
                   quote:
                     "I am thoroughly impressed by Pacific Safety Solution's dedication to providing top-tier safety equipment and fiberglass services. Their expertise and customer-focused approach set them apart in Lagos. It's always a pleasure working with such a reliable and professional team.",
-                  image:
-                    "https://cdn.durable.co/getty/19JcE3FyW9oyMVK85U5pjH9JVBKyZmbBncQSZjjf68D535RSKHGIYjBffzDlG7nS.jpeg",
+                  image: "/images/feedback-1.jpg",
                 },
               ].map((testimonial, index) => (
                 <div
@@ -355,7 +354,8 @@ export default function Home() {
       </section>
 
       <section
-        className="relative px-3 pt-20 mb-14 sm:mb-10 bg-gray-200"
+        className="relative px-3 lg:px-0 pt-20 mb-14 sm:mb-10 bg-gray-200"
+        id="values"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
@@ -382,7 +382,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-col lg:flex-wrap relative justify-start gap-[40px]">
+              <div className="grid grid-col-1 lg:grid-cols-3 relative justify-start gap-[40px]">
                 {[
                   {
                     title: "Commitment to Safety",
@@ -420,8 +420,8 @@ export default function Home() {
                         100 + index * 100
                       }ms] opacity-100 translate-y-0 h-full`}
                     >
-                      <div className="flex flex-col h-full rounded-sm md:rounded-md lg:rounded-lg">
-                        <div className="flex flex-col items-start py-6 text-gray-900">
+                      <div className="flex flex-col lg:flex-wrap h-full rounded-sm md:rounded-md lg:rounded-lg">
+                        <div className="flex flex-col lg:flex-wrap items-start py-6 text-gray-900">
                           <h2 className="text-2xl font-bold  mb-2 ml-0 mr-auto text-current">
                             {card.title}
                           </h2>
@@ -470,7 +470,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 px-2 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
+          <div className="relative z-10 px-2 lg:px-0 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
             <div className="flex flex-row w-full md:flex-row-reverse">
               <div className="relative z-10 w-full md:w-1/2 xl:w-2/5 flex flex-col gap-6 p-6 lg:p-10 shadow overflow-hidden rounded-sm md:rounded-md lg:rounded-lg">
                 <div className="absolute inset-0 z-10  pointer-events-none">
@@ -527,7 +527,7 @@ export default function Home() {
                     type="button"
                     className="px-6 py-3 border-2 shadow-none font-medium bg-[#5200f5] text-white rounded-lg border-[#5200f5]"
                   >
-                    Contact Us
+                    <Link href="/#contact"> Contact Us</Link>
                   </button>
                 </div>
               </div>
@@ -564,7 +564,7 @@ export default function Home() {
                 <Image
                   alt="Lining process of coating tank and repair by resin and fiberglass"
                   title="Lining process of coating tank and repair by resin and fiberglass"
-                  src="https://cdn.durable.co/getty/12e60MzVRJMlOoKWayW6ZTGeMGnzf5fdqOgjx7oi1piFsQNrvmI4DEQh6N5xCblx.jpeg"
+                  src="/images/drilling.jpg"
                   fill
                   className="w-full h-[500px] object-cover object-center"
                   priority
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      <section className="relative">
+      <section id="contact" className="relative">
         <div
           id="688e5691fa86f3be4852316c"
           className="flex flex-none flex-shrink-0 relative items-center -mt-[89px] pt-[89px] pb-0 z-[30]"
@@ -618,7 +618,7 @@ export default function Home() {
             <div className="absolute inset-0 z-10 bg-[#f5f4f6]"></div>
           </div>
 
-          <div className="relative z-10 px-6 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative z-10 px-6 lg:px-0 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
             <div className="transition-all duration-500 ease-in-out opacity-100 translate-y-0 flex flex-col w-full gap-10 max-w-3xl mx-auto">
               {/* Heading */}
               <div className="w-full text-center text-gray-900">
