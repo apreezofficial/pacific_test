@@ -629,7 +629,7 @@ Contact us at Pacific Safety Solution for all safety equipment services
               </div>
 
               {/* Form */}
-              <form className="w-full block" noValidate action="https://app.proforms.top/f/pr3861a45" method="POST">
+              <form className="w-full block" action="https://app.proforms.top/f/pr3861a45" method="POST">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full mb-4">
                   {/* Name */}
                   <div>
@@ -639,6 +639,7 @@ Contact us at Pacific Safety Solution for all safety equipment services
                     <input
                       type="text"
                       autoComplete="name"
+                      name="Name"
                       required
                       className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
                     />
@@ -652,6 +653,7 @@ Contact us at Pacific Safety Solution for all safety equipment services
                     <input
                       type="email"
                       autoComplete="email"
+                      name="Email"
                       required
                       className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
                     />
@@ -663,10 +665,11 @@ Contact us at Pacific Safety Solution for all safety equipment services
                       Message *
                     </label>
                     <textarea
-                      rows={5}
-                      required
-                      className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
-                    ></textarea>
+  rows={5}
+  required
+  name="message"  
+  className="w-full px-4 py-2 rounded-lg bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
+></textarea>
                   </div>
                 </div>
 
@@ -711,6 +714,7 @@ Contact us at Pacific Safety Solution for all safety equipment services
                   </div>
                 </div>
               </form>
+
             </div>
           </div>
         </div>
