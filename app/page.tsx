@@ -162,11 +162,11 @@ export default function Home() {
       <section
         className="relative pb-10 z-10"
         style={{
-          clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
-          WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
+          clipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
+          WebkitClipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="container mx-auto px-6 pt-80 lg:pt-32 pb-0">
+        <div className="container mx-auto px-6 pt-30 lg:pt-32 pb-0">
           <div className="absolute inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 bg-gray-200"></div>
           </div>
@@ -184,7 +184,7 @@ export default function Home() {
                 industrial needs.
               </p>
             </div>
-            <div className="flex flex-col lg:flex-wrap justify-start gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 justify-start gap-10">
               {[
                 {
                   img: "https://cdn.durable.co/getty/69UEvt8kSydw5ndhzGws5SW3bWZX9ycVgUTz8fGP51Cv2aIftZjudTUyaEwSBBZw.jpeg",
