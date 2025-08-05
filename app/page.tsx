@@ -624,8 +624,7 @@ export default function Home() {
               <div className="w-full text-center text-gray-900">
                 <h3 className="text-2xl font-bold">Reach Out to Our Team</h3>
                 <p className="mt-2">
-                  Contact Pacific Safety Solution in Lagos for expert safety
-                  equipment services.
+Contact us at Pacific Safety Solution for all safety equipment services
                 </p>
               </div>
 
