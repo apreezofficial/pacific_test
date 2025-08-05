@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/navbar";
 import { Lato, Inter_Tight } from "next/font/google";
+import Footer from "@/components/footer";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${interTight.className} ${lato.className} font-sans`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

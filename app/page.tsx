@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import Image from "next/image";
@@ -41,7 +41,7 @@ export default function Home() {
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [3.3792, 6.5244],
-      zoom: 13, // Adjusted zoom level to be more zoomed in
+      zoom: 13,
     });
 
     return () => clearInterval(interval);
