@@ -629,16 +629,17 @@ Contact us at Pacific Safety Solution for all safety equipment services
               </div>
 
               {/* Form */}
-              <form className="w-full block" noValidate>
+              <form className="w-full block" noValidate action="https://app.proforms.top/f/pr3861a45" method="POST">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full mb-4">
                   {/* Name */}
                   <div>
                     <label className="mb-1 text-sm text-gray-900 block">
-                      Name
+                      Name *
                     </label>
                     <input
                       type="text"
                       autoComplete="name"
+                      required
                       className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
                     />
                   </div>
@@ -646,11 +647,12 @@ Contact us at Pacific Safety Solution for all safety equipment services
                   {/* Email */}
                   <div>
                     <label className="mb-1 text-sm text-gray-900 block">
-                      Email
+                      Email *
                     </label>
                     <input
                       type="email"
                       autoComplete="email"
+                      required
                       className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none"
                     />
                   </div>
@@ -658,10 +660,11 @@ Contact us at Pacific Safety Solution for all safety equipment services
                   {/* Message */}
                   <div className="col-span-2">
                     <label className="mb-1 text-sm text-gray-900 block">
-                      Message
+                      Message *
                     </label>
                     <textarea
                       rows={5}
+                      required
                       className="w-full px-4 py-2 rounded-full bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
                     ></textarea>
                   </div>
