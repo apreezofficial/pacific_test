@@ -213,7 +213,7 @@ export default function Home() {
                   desc: "Hands-on training sessions to prepare teams for emergency situations.",
                 },
                 {
-                  img: "/images/helment-2.jpg",
+                  img: "/images/headset.jpg",
                   alt: "Fire extinguisher and a protective helmet.",
                   title: "Durable Equipment Supply",
                   desc: "Providing high-quality, long-lasting safety equipment to ensure maximum protection.",
@@ -624,12 +624,17 @@ export default function Home() {
               <div className="w-full text-center text-gray-900">
                 <h3 className="text-2xl font-bold">Reach Out to Our Team</h3>
                 <p className="mt-2">
-Contact us at Pacific Safety Solution for all safety equipment services
+                  Contact us at Pacific Safety Solution for all safety equipment
+                  services
                 </p>
               </div>
 
               {/* Form */}
-              <form className="w-full block" action="https://app.proforms.top/f/pr3861a45" method="POST">
+              <form
+                className="w-full block"
+                action="https://app.proforms.top/f/pr3861a45"
+                method="POST"
+              >
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full mb-4">
                   {/* Name */}
                   <div>
@@ -665,11 +670,11 @@ Contact us at Pacific Safety Solution for all safety equipment services
                       Message *
                     </label>
                     <textarea
-  rows={5}
-  required
-  name="message"  
-  className="w-full px-4 py-2 rounded-lg bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
-></textarea>
+                      rows={5}
+                      required
+                      name="message"
+                      className="w-full px-4 py-2 rounded-lg bg-black/10 text-gray-900 placeholder-current outline-none resize-none"
+                    ></textarea>
                   </div>
                 </div>
 
@@ -714,7 +719,6 @@ Contact us at Pacific Safety Solution for all safety equipment services
                   </div>
                 </div>
               </form>
-
             </div>
           </div>
         </div>
