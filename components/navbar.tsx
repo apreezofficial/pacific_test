@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Info, Briefcase, Star, Heart, Phone } from "lucide-react";
 import Image from "next/image";
 
 export default function NavBar() {
@@ -21,7 +21,7 @@ export default function NavBar() {
             src="/images/logo.png"
             alt="logo"
           />
-          <p className="text-xl  lg:text-2xl font-bold truncate">
+          <p className="text-xl lg:text-2xl font-bold truncate">
             Pacific Safety Solution
           </p>
         </Link>
@@ -51,58 +51,48 @@ export default function NavBar() {
           className="lg:hidden focus:outline-none"
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          <Menu className="w-7 h-7" />
         </button>
       </div>
 
-      {/* Fullscreen Mobile Menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-[1999] bg-[#5200f5] text-white flex flex-col justify-center items-center transition-all duration-300 ease-in-out">
-          <nav className="flex flex-col items-center space-y-8 text-2xl font-semibold">
-            <Link
-              href="#about"
-              onClick={toggleMenu}
-              className="hover:text-gray-300 transition"
-            >
-              About
-            </Link>
-            <Link
-              href="#services"
-              onClick={toggleMenu}
-              className="hover:text-gray-300 transition"
-            >
-              Services
-            </Link>
-            <Link
-              href="#testimonials"
-              onClick={toggleMenu}
-              className="hover:text-gray-300 transition"
-            >
-              Testimonials
-            </Link>
-            <Link
-              href="#values"
-              onClick={toggleMenu}
-              className="hover:text-gray-300 transition"
-            >
-              Values
-            </Link>
-            <Link
-              href="#contact"
-              onClick={toggleMenu}
-              className="hover:text-gray-300 transition"
-            >
-              Contact
-            </Link>
-          </nav>
-
-          <button
-            onClick={toggleMenu}
-            className="mt-12 text-sm underline hover:text-gray-300 transition"
-          >
-            Close Menu
+      {/* Side Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-[#5200f5] text-white z-[3000] transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center px-6 py-6">
+          <p className="text-lg font-bold">Menu</p>
+          <button onClick={toggleMenu} aria-label="Close menu">
+            <X className="w-6 h-6" />
           </button>
         </div>
+
+        <nav className="flex flex-col space-y-6 px-6 text-lg font-medium">
+          <Link href="#about" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+            <Info className="w-5 h-5" /> About
+          </Link>
+          <Link href="#services" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+            <Briefcase className="w-5 h-5" /> Services
+          </Link>
+          <Link href="#testimonials" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+            <Star className="w-5 h-5" /> Testimonials
+          </Link>
+          <Link href="#values" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+            <Heart className="w-5 h-5" /> Values
+          </Link>
+          <Link href="#contact" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+            <Phone className="w-5 h-5" /> Contact
+          </Link>
+        </nav>
+      </div>
+
+      {/* Overlay for closing menu */}
+      {menuOpen && (
+        <div
+          onClick={toggleMenu}
+          className="fixed inset-0 bg-black bg-opacity-50 z-[2500] lg:hidden"
+        />
       )}
     </header>
   );
