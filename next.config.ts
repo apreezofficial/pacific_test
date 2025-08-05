@@ -3,9 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
-  images: {
-    domains: ["cdn.durable.co"],
-  },
+  unoptimized: true,
 };
 
 export default nextConfig;
