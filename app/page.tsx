@@ -48,7 +48,7 @@ export default function Home() {
   }, [slides.length]);
 
   return (
-    <div className="min-h-screen sm:mx-2 overflow-x-hidden bg-white text-black">
+    <div className="min-h-screen  overflow-x-hidden bg-white text-black">
       {/* Hero Section */}
       <section
         className="relative lg:h-[780px] w-full"
@@ -95,7 +95,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="relative z-20 container mx-auto px-5 md:px-6 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
+          <div className="relative z-20 container mx-auto px-5 md:px-6  lg:px-0 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
             <div className="flex flex-col gap-4 w-full max-w-2xl items-start">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
                 Reliable Protection, Exceptional Quality
@@ -106,7 +106,7 @@ export default function Home() {
                 excellence.
               </p>
               <div className="flex flex-col md:flex-row gap-4 mt-4">
-                <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
+                <button className="bg-white text-black  px-6 lg:px-0 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
                   Explore Our Services
                 </button>
               </div>
@@ -128,7 +128,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-10 my-8">
-        <div className="container mx-auto px-6 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
+        <div className="container mx-auto  px-6 lg:px-0 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
           <div className="flex-1 ">
             <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
               Your Trusted Partner in Safety Solutions
@@ -160,13 +160,14 @@ export default function Home() {
 
       {/* Services Section */}
       <section
+        id="services"
         className="relative pb-10 z-10"
         style={{
           clipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 4%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="container mx-auto px-6 pt-30 lg:pt-32 pb-0">
+        <div className="container mx-auto px-6 lg:px-0 pt-30 lg:pt-32 pb-0">
           <div className="absolute inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 bg-gray-200"></div>
           </div>
@@ -260,7 +261,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="py-16 bg-white my-14 text-black text-center">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6  lg:px-0">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Protect your workforce with Pacific Safety Solutions, Lagos&apos;
             premier choice for comprehensive safety equipment installation and
@@ -273,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative">
+      <section id="testimonials" className="relative">
         <div
           className="relative flex items-center fix-safari-flickering"
           style={{
@@ -293,7 +294,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative px-4 z-10 container mx-auto  pt-30 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative px-4 lg:px-0 z-10 container mx-auto  pt-30 lg:pt-32 pb-16 lg:pb-32">
             <div className="flex flex-col gap-4 max-w-5xl mb-12 text-left text-white">
               <p className="text-sm font-[lato] font-semibold">
                 Trusted Feedback
@@ -355,7 +356,8 @@ export default function Home() {
       </section>
 
       <section
-        className="relative px-3 pt-20 mb-14 sm:mb-10 bg-gray-200"
+        className="relative px-3 lg:px-0 pt-20 mb-14 sm:mb-10 bg-gray-200"
+        id="values"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
           WebkitClipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
@@ -382,7 +384,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-col lg:flex-wrap relative justify-start gap-[40px]">
+              <div className="grid grid-col-1 lg:grid-cols-3 relative justify-start gap-[40px]">
                 {[
                   {
                     title: "Commitment to Safety",
@@ -420,8 +422,8 @@ export default function Home() {
                         100 + index * 100
                       }ms] opacity-100 translate-y-0 h-full`}
                     >
-                      <div className="flex flex-col h-full rounded-sm md:rounded-md lg:rounded-lg">
-                        <div className="flex flex-col items-start py-6 text-gray-900">
+                      <div className="flex flex-col lg:flex-wrap h-full rounded-sm md:rounded-md lg:rounded-lg">
+                        <div className="flex flex-col lg:flex-wrap items-start py-6 text-gray-900">
                           <h2 className="text-2xl font-bold  mb-2 ml-0 mr-auto text-current">
                             {card.title}
                           </h2>
@@ -470,7 +472,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 px-2 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
+          <div className="relative z-10 px-2 lg:px-0 container mx-auto py-12 lg:py-14 xl:py-20 flex items-center">
             <div className="flex flex-row w-full md:flex-row-reverse">
               <div className="relative z-10 w-full md:w-1/2 xl:w-2/5 flex flex-col gap-6 p-6 lg:p-10 shadow overflow-hidden rounded-sm md:rounded-md lg:rounded-lg">
                 <div className="absolute inset-0 z-10  pointer-events-none">
@@ -608,7 +610,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form */}
-      <section className="relative">
+      <section id="contact" className="relative">
         <div
           id="688e5691fa86f3be4852316c"
           className="flex flex-none flex-shrink-0 relative items-center -mt-[89px] pt-[89px] pb-0 z-[30]"
@@ -618,7 +620,7 @@ export default function Home() {
             <div className="absolute inset-0 z-10 bg-[#f5f4f6]"></div>
           </div>
 
-          <div className="relative z-10 px-6 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+          <div className="relative z-10 px-6 lg:px-0 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
             <div className="transition-all duration-500 ease-in-out opacity-100 translate-y-0 flex flex-col w-full gap-10 max-w-3xl mx-auto">
               {/* Heading */}
               <div className="w-full text-center text-gray-900">
