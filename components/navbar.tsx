@@ -10,7 +10,6 @@ export default function NavBar() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Prevent page scroll when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -41,13 +40,10 @@ export default function NavBar() {
             About
           </Link>
           <Link href="#services" className="hover:text-gray-300 transition">
-            Services
+            Products
           </Link>
           <Link href="#testimonials" className="hover:text-gray-300 transition">
             Testimonials
-          </Link>
-          <Link href="#values" className="hover:text-gray-300 transition">
-            Values
           </Link>
           <Link href="#contact" className="hover:text-gray-300 transition">
             Contact
@@ -78,19 +74,33 @@ export default function NavBar() {
         </div>
 
         <nav className="flex flex-col space-y-6 px-6 text-lg font-medium">
-          <Link href="#about" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+          <Link
+            href="#about"
+            onClick={toggleMenu}
+            className="flex items-center gap-3 hover:text-gray-300 transition"
+          >
             <Info className="w-5 h-5" /> About
           </Link>
-          <Link href="#services" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
-            <Briefcase className="w-5 h-5" /> Services
+          <Link
+            href="#products"
+            onClick={toggleMenu}
+            className="flex items-center gap-3 hover:text-gray-300 transition"
+          >
+            <Briefcase className="w-5 h-5" /> Products
           </Link>
-          <Link href="#testimonials" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+          <Link
+            href="#testimonials"
+            onClick={toggleMenu}
+            className="flex items-center gap-3 hover:text-gray-300 transition"
+          >
             <Star className="w-5 h-5" /> Testimonials
           </Link>
-          <Link href="#values" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
-            <Heart className="w-5 h-5" /> Values
-          </Link>
-          <Link href="#contact" onClick={toggleMenu} className="flex items-center gap-3 hover:text-gray-300 transition">
+
+          <Link
+            href="#contact"
+            onClick={toggleMenu}
+            className="flex items-center gap-3 hover:text-gray-300 transition"
+          >
             <Phone className="w-5 h-5" /> Contact
           </Link>
         </nav>

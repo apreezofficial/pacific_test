@@ -107,7 +107,7 @@ export default function Home() {
                 excellence.
               </p>
               <div className="flex flex-col md:flex-row gap-4 mt-4">
-                <button className="bg-white text-black  px-6 lg:px-0 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
+                <button className="bg-white text-black  px-6  py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
                   Explore Our Services
                 </button>
               </div>
@@ -128,39 +128,187 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-10 my-8">
-        <div className="container mx-auto  px-6 lg:px-0 text-[#121212] flex items-center flex-col lg:flex-row gap-4 lg:gap-30 ">
+      <section id="#about" className="py-16 bg-white text-[#121212]">
+        <div className="container mx-auto px-6 lg:px-0 flex flex-col lg:flex-row  gap-10">
+          {/* Text content */}
           <div className="flex-1 ">
-            <h2 className="text-4xl  lg:w-[70%] mb-1 leading-tight font-bold">
+            <h1 className="text-4xl font-bold leading-9.5 mb-2">
               Your Trusted Partner in Safety Solutions
-            </h2>
-            <p className="text-lg font-[lato]">
-              At Pacific Safety Solution, based in the vibrant city of Lagos,
-              Nigeria, we specialize in providing top-tier safety equipment and
-              fiberglass services. Our dedication to quality and innovation
-              ensures that each product meets stringent safety standards and
-              client needs. We are committed to safeguarding your work
-              environment with reliable solutions that offer peace of mind.
-              Trust us to deliver excellence, as we continue our mission to
-              enhance workplace safety across diverse industries.
-            </p>
+            </h1>
+
+            <div className="space-y-4 text-[16px] font-[lato]">
+              <p>
+                <strong>PACIFIC SAFETY SOLUTION LIMITED</strong> is a duly
+                registered, Limited Liability Company with CAC in the federal
+                republic of Nigeria with registration number
+                <strong>RC1928296</strong>.
+              </p>
+
+              <p>
+                The company’s service station is situated in Lagos Nigeria and
+                the company renders services to vessels trading within other
+                African countries.
+              </p>
+
+              <p>
+                Our major customers include oil/gas companies with offshore
+                installations, vessel owners/managers, ship agencies, and other
+                foreign registered commercial vessels through their local
+                agents, as well as foreign and locally registered yachts.
+              </p>
+
+              <p>
+                The company was founded in 2022 primarily as an LSA/FFA Service
+                provider and later grew into supplies of other marine and ship
+                maintenance parts such as:
+              </p>
+
+              <p>
+                Life Jackets and Work Vests, Immersion Suits, Emergency Food
+                Rations and Water Marine Distress Signals (Pyrotechnics) Safety
+                Lights New Inflatable Life rafts MOB, HRU & Line thrower
+                Navigational aids Engines etc
+              </p>
+
+              <p>
+                We also offer a Liferaft rental service for operators who find
+                it beneficial to rent liferafts for either short or extended
+                periods.
+              </p>
+
+              <p>
+                Our Service Engineers receive refresher training courses at the
+                respective factories frequently, and our service facility is
+                fully equipped and approved in accordance with international
+                standards.
+              </p>
+            </div>
           </div>
+
+          {/* Image */}
           <div className="flex-1">
-            <div className="relative  w-full rounded-lg overflow-hidden">
+            <div className="relative w-full lg:h-full shadow-lg">
               <Image
                 src="/images/hero-image-2.jpg"
                 alt="Technician adjusting safety glasses"
                 width={500}
                 height={500}
-                className="object-cover w-full h-[320px]"
+                className="object-cover rounded-2xl  w-full min-h-[100%]"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Product section */}
+
+      <section id="products" className="py-16 bg-gray-200 text-[#121212]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-center text-gray-900">
+            Our Marine Products and Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Life Jackets & Work Vests",
+                description:
+                  "High-quality, durable life jackets and work vests designed for safety and comfort in marine environments.",
+                image: "/images/vest.jpg",
+              },
+              {
+                title: "Immersion Suits",
+                description:
+                  "Protective suits to ensure safety in extreme conditions, offering thermal insulation and buoyancy.",
+                image: "/images/dive-suit.jpeg",
+              },
+              {
+                title: "Emergency Food Rations & Water",
+                description:
+                  "Long-shelf-life rations and potable water for emergency preparedness at sea.",
+                image: "/images/ration.jpg",
+              },
+              {
+                title: "Marine Distress Signals",
+                description:
+                  "Reliable pyrotechnics for signaling distress, ensuring visibility in emergency situations.",
+                image: "/images/signal.jpg",
+              },
+              {
+                title: "Safety Lights",
+                description:
+                  "Durable, high-intensity lights for enhanced visibility and safety on vessels.",
+                image: "/images/flash.jpg",
+              },
+              {
+                title: "Inflatable Life Rafts",
+                description:
+                  "High-quality inflatable life rafts for emergency evacuation and survival at sea.",
+                image: "/images/inflatables.jpg",
+              },
+              {
+                title: "MOB, HRU & Line Thrower",
+                description:
+                  "Man Overboard (MOB) devices, Hydrostatic Release Units (HRU), and line throwers for rescue operations.",
+                image: "/images/hydro-device.png",
+              },
+              {
+                title: "Navigational Aids",
+                description:
+                  "Advanced navigational tools to ensure safe and accurate maritime navigation.",
+                image: "/images/navigation.jpg",
+              },
+              {
+                title: "Engines & Electrical Parts",
+                description:
+                  "Reliable engines and electrical components for vessel maintenance and performance.",
+                image: "/images/engine-parts.jpg",
+              },
+              {
+                title: "Lube Oil",
+                description:
+                  "High-performance lubricants to ensure smooth operation of marine engines.",
+                image: "/images/marine-oil.jpg",
+              },
+              {
+                title: "Wire Ropes & Lifting Gears",
+                description:
+                  "Durable wire ropes, anchor chains, and mooring ropes for secure lifting and docking.",
+                image: "/images/lifting-devices.png",
+              },
+              {
+                title: "Liferaft Rental Service",
+                description:
+                  "Flexible liferaft rental options for short- or long-term maritime operations.",
+                image: "/images/boat-rentals.jpg",
+              },
+            ].map((product, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+              >
+                <div className="mb-4">
+                  <Image
+                    width={500}
+                    height={500}
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-[140px]  object-conver"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                  {product.title}
+                </h3>
+                <p className="text-gray-600 font-[lato]">
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section
+      {/* <section
         id="services"
         className="relative pb-10 z-10"
         style={{
@@ -258,7 +406,7 @@ export default function Home() {
           </div>
         </div>
         <div></div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="py-16 bg-white my-14 text-black text-center">
@@ -375,39 +523,19 @@ export default function Home() {
                 <h2 className="text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
                   Delivering Trusted Safety Solutions
                 </h2>
-                <p className="font-[lato] text-lg lg:w-[80%] block  ml-0 mr-auto text-gray-900">
-                  At Pacific Safety Solutions, we prioritize unwavering
-                  integrity, innovation, and excellence to ensure ultimate
-                  protection and client satisfaction.
-                </p>
               </div>
 
-              <div className="grid grid-col-1 lg:grid-cols-3 relative justify-start gap-[40px]">
+              <div className="grid grid-col-1 relative justify-start gap-[40px]">
                 {[
                   {
-                    title: "Commitment to Safety",
+                    title: "Mission Statement",
                     content:
-                      "At Pacific safety solution, safety is not just a priority, it is our core mission. We are dedicated to providing top-notch safety equipment and services that ensure the well-being of our clients and their teams. Every product and service we offer is designed with the highest safety standards in mind.",
+                      "At Pacific Safety Solution Limited we are committed to safety and the principles and values guiding it rules in accordance with national and international safety laws and with customer service of the highest standard, services of high quality which are value specific to the needs of our customers, and our team with the knowledge, right tools, and work environment necessary to propel this company to the forefront of marine safety & survival.",
                   },
                   {
-                    title: "Quality Assurance",
+                    title: "Vision Statement",
                     content:
-                      "Quality is at the heart of everything we do. Our fiber glass services and safety equipment are crafted with precision and care, ensuring durability and reliability. We adhere to strict quality control measures to guarantee that our clients receive only the best.",
-                  },
-                  {
-                    title: "Innovation",
-                    content:
-                      "We believe in the power of innovation to improve safety standards. Pacific safety solution is committed to staying at the forefront of technological advancements in the industry, constantly seeking new ways to enhance our products and services.",
-                  },
-                  {
-                    title: "Customer Focus",
-                    content:
-                      "Our clients are at the center of our operations. We strive to understand their unique needs and provide tailored solutions that exceed expectations. Our dedicated team is always ready to offer support and guidance, ensuring a seamless experience.",
-                  },
-                  {
-                    title: "Integrity",
-                    content:
-                      "Honesty and transparency are fundamental to our business practices. We build trust with our clients through open communication and by delivering on our promises. At Pacific safety solution, integrity is the foundation of our relationships.",
+                      "To become the best leading marine safety and survival provider company where our customers receive the best technical and professional services with the right team, tools and paper work to deliver a top-notch marine service.",
                   },
                 ].map((card, index) => (
                   <div
