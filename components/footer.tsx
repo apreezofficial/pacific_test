@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col ">
             <div className="flex items-center justify-center">
               <Link href="/" className="grid max-w-full">
-                <h2 className="text-xl text-center font-[lato]  font-semibold leading-none text-gray-800">
+                <h2 className="base text-center font-[lato]  font-semibold leading-none text-gray-800">
                   © Pacific safety solution 2025
                 </h2>
               </Link>

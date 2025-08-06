@@ -502,7 +502,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative px-3 lg:px-0 pt-20 mb-14 sm:mb-10 bg-gray-200"
+        className="relative px-6 lg:px-0 pt-20 mb-14 sm:mb-10 bg-gray-200"
         id="values"
         style={{
           clipPath: "polygon(0 0%, 100% 10%, 100% 100%, 0% 100%)",
