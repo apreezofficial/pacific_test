@@ -107,8 +107,8 @@ export default function Home() {
                 excellence.
               </p>
               <div className="flex flex-col md:flex-row gap-4 mt-4">
-                <button className="bg-white text-black  px-6  py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
-                  Explore Our Services
+                <button className="bg-white text-black text-sm px-6  py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
+                  <Link href="#products">Explore Our Services</Link>
                 </button>
               </div>
               <div className="flex items-center gap-2 mt-12">
@@ -204,7 +204,7 @@ export default function Home() {
 
       <section id="products" className="py-16 bg-gray-200 text-[#121212]">
         <div className="container mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-center text-gray-900">
+          <h2 className="text-xl lg:text-3xl md:text-4xl font-bold leading-tight mb-4 lg:mb-12 text-center text-gray-900">
             Our Marine Products and Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -295,10 +295,10 @@ export default function Home() {
                     className="w-full h-[140px]  object-conver"
                   />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">
+                <h3 className="text-lg font-bold mb-1 text-gray-900">
                   {product.title}
                 </h3>
-                <p className="text-gray-600 font-[lato]">
+                <p className="text-gray-600 text-sm font-[lato]">
                   {product.description}
                 </p>
               </div>
@@ -489,10 +489,12 @@ export default function Home() {
                       src={testimonial.image}
                       alt={`- ${testimonial.name}`}
                       fill
-                      className="object-cover"
+                      className="object-cover w-18 h-18"
                     />
                   </div>
-                  <h3 className="text-lg font-medium">{testimonial.quote}</h3>
+                  <h3 className="text-base lg:text-lg font-medium">
+                    {testimonial.quote}
+                  </h3>
                   <p className="text-base">- {testimonial.name}</p>
                 </div>
               ))}
@@ -520,12 +522,12 @@ export default function Home() {
                 <p className="w-max max-w-full body-small !font-semibold text-[#0a001f]">
                   Assured Safety
                 </p>
-                <h2 className="text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
+                <h2 className="text-3xl lg:text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
                   Delivering Trusted Safety Solutions
                 </h2>
               </div>
 
-              <div className="grid grid-col-1 relative justify-start gap-[40px]">
+              <div className="grid grid-col-1 relative justify-start gap-10">
                 {[
                   {
                     title: "Mission Statement",
@@ -549,11 +551,11 @@ export default function Home() {
                       }ms] opacity-100 translate-y-0 h-full`}
                     >
                       <div className="flex flex-col lg:flex-wrap h-full rounded-sm md:rounded-md lg:rounded-lg">
-                        <div className="flex flex-col lg:flex-wrap items-start py-6 text-gray-900">
-                          <h2 className="text-2xl font-bold  mb-2 ml-0 mr-auto text-current">
+                        <div className="flex flex-col lg:flex-wrap items-start py-2 lg:py-6 text-gray-900">
+                          <h2 className="text-xl font-bold  mb-2 ml-0 mr-auto text-current">
                             {card.title}
                           </h2>
-                          <div className="text-lg font-[lato] ml-0 mr-auto text-current">
+                          <div className="text-base text-justify font-[lato] ml-0 mr-auto text-current">
                             {card.content}
                           </div>
                         </div>

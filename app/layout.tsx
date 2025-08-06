@@ -17,9 +17,9 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Safety Gear Maintenance Experts – Pacific Safety Solution",
+  title: "Pacific Safety Solution",
   description:
-    "Pacific Safety Solution Ltd in Lagos, Nigeria offers expert maintenance of safety equipment, fiber glass work, wire fall installation, and life-saving appliance servicing.",
+    "PACIFIC SAFETY SOLUTION LIMITED  is a duly registered Limited Liability Company with CAC in the federal republic of Nigeria with registration number RC1928296, we supply ship maintainace part and other marine supplies such as ship Life Jackets and Work Vests, Immersion Suits, Emergency Food Rations and Water Marine Distress Signals (Pyrotechnics) Safety Lights, New Inflatable Life rafts, MOB, HRU & Line thrower Navigational aids Engines etc ",
 };
 
 export default function RootLayout({
