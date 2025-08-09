@@ -7,14 +7,17 @@ import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleServices = () => setServicesOpen(!servicesOpen);
 
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
+      setServicesOpen(false); // close services submenu when menu closes
     }
   }, [menuOpen]);
 
@@ -30,7 +33,7 @@ export default function NavBar() {
             alt="logo"
           />
           <p className="text-base font-[lato] lg:text-2xl font-bold truncate">
-            Pacific Safety Solution <p>Limited</p>
+            Pacific Safety Solution <br /> Limited
           </p>
         </Link>
 
@@ -39,12 +42,28 @@ export default function NavBar() {
           <Link href="#about" className="hover:text-gray-300 transition">
             About
           </Link>
-          <Link href="#services" className="hover:text-gray-300 transition">
-            Products
+          <Link href="#testimonials" className="hover:text-gray-300 transition">
+            Testimonials
           </Link>
-          <Link href="#services" className="hover:text-gray-300 transition">
-            Services
-          </Link>
+          <div className="relative group inline-block">
+            <Link href="#services" passHref>
+              <a className="hover:text-gray-300 transition cursor-pointer select-none">
+                Services
+              </a>
+            </Link>
+
+            <div className="absolute hidden group-hover:block bg-white text-gray-700 mt-1 rounded shadow-md w-36 z-10">
+              <Link href="#service1">
+                <a className="block px-4 py-2 hover:bg-gray-100">Service 1</a>
+              </Link>
+              <Link href="#service2">
+                <a className="block px-4 py-2 hover:bg-gray-100">Service 2</a>
+              </Link>
+              <Link href="#service3">
+                <a className="block px-4 py-2 hover:bg-gray-100">Service 3</a>
+              </Link>
+            </div>
+          </div>
           <Link href="#contact" className="hover:text-gray-300 transition">
             Contact
           </Link>
@@ -88,13 +107,63 @@ export default function NavBar() {
           >
             <Briefcase className="w-5 h-5" /> Products
           </Link>
-          <Link
-            href="#services"
-            onClick={toggleMenu}
-            className="flex items-center gap-3 hover:text-gray-300 transition"
+
+          {/* Services with dropdown toggle */}
+          <button
+            onClick={toggleServices}
+            className="flex items-center gap-3 hover:text-gray-300 transition cursor-pointer select-none w-full text-left"
+            aria-expanded={servicesOpen}
+            aria-controls="mobile-services-submenu"
           >
-            <Star className="w-5 h-5" /> Services 
-          </Link>
+            <Star className="w-5 h-5" />
+            Services
+            <svg
+              className={`ml-auto h-4 w-4 transition-transform ${
+                servicesOpen ? "rotate-180" : "rotate-0"
+              }`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          {servicesOpen && (
+            <div
+              id="mobile-services-submenu"
+              className="flex flex-col ml-8 mt-2 space-y-2"
+            >
+              <Link
+                href="#service1"
+                onClick={toggleMenu}
+                className="hover:text-gray-300 transition"
+              >
+                Service 1
+              </Link>
+              <Link
+                href="#service2"
+                onClick={toggleMenu}
+                className="hover:text-gray-300 transition"
+              >
+                Service 2
+              </Link>
+              <Link
+                href="#service3"
+                onClick={toggleMenu}
+                className="hover:text-gray-300 transition"
+              >
+                Service 3
+              </Link>
+            </div>
+          )}
 
           <Link
             href="#contact"
@@ -111,8 +180,9 @@ export default function NavBar() {
         <div
           onClick={toggleMenu}
           className="fixed inset-0 z-[2500] lg:hidden"
+          aria-hidden="true"
         />
       )}
     </header>
   );
-}
+  }
