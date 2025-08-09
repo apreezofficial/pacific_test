@@ -99,13 +99,11 @@ export default function Home() {
           <div className="relative z-20 container mx-auto px-5 md:px-6  lg:px-0 pt-20 lg:pt-48 pb-20 lg:pb-48 flex  h-full">
             <div className="flex flex-col gap-4 w-full max-w-2xl items-start">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white">
-                Your trusted partner in marine safety and life raft Services
-              </h1>
-              <p className="text-base text-white">
-                Ensure your safety with our top-grade safety equipment and
-                premier fiberglass solutions crafted for durability and
-                excellence.
-              </p>
+  Your trusted partner in marine safety and life raft services
+</h1>
+<p className="text-base text-white">
+  Providing expert marine safety solutions and reliable life raft services to ensure your peace of mind on the water.
+</p>
               <div className="flex flex-col md:flex-row gap-4 mt-4">
                 <button className="bg-white text-black text-sm px-6  py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
                   <Link href="#products">Explore Our Services</Link>
@@ -185,58 +183,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
-            <div>
-              <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 flex flex-col gap-4 mb-6 items-start">
-                <p className="w-max max-w-full body-small !font-semibold text-[#0a001f]">
-                  Assured Safety
-                </p>
-                <h2 className="text-3xl lg:text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
-                  Delivering Trusted Safety Solutions
-                </h2>
-              </div>
-
-              <div className="grid grid-col-1 relative justify-start gap-10">
-                {[
-                  {
-                    title: "Mission Statement",
-                    content:
-                      "At Pacific Safety Solution Limited we are committed to safety and the principles and values guiding it rules in accordance with national and international safety laws and with customer service of the highest standard, services of high quality which are value specific to the needs of our customers, and our team with the knowledge, right tools, and work environment necessary to propel this company to the forefront of marine safety & survival.",
-                  },
-                  {
-                    title: "Vision Statement",
-                    content:
-                      "To become the best leading marine safety and survival provider company where our customers receive the best technical and professional services with the right team, tools and paper work to deliver a top-notch marine service.",
-                  },
-                ].map((card, index) => (
-                  <div
-                    key={index}
-                    className="group w-full relative overflow-hidden rounded-sm md:rounded-md lg:rounded-lg"
-                    style={{ flex: "0 0 calc(33.3333% - 26.6667px)" }}
-                  >
-                    <div
-                      className={`transition-all ease-in-out duration-500 delay-[${
-                        100 + index * 100
-                      }ms] opacity-100 translate-y-0 h-full`}
-                    >
-                      <div className="flex flex-col lg:flex-wrap h-full rounded-sm md:rounded-md lg:rounded-lg">
-                        <div className="flex flex-col lg:flex-wrap items-start py-2 lg:py-6 text-gray-900">
-                          <h2 className="text-xl font-bold  mb-2 ml-0 mr-auto text-current">
-                            {card.title}
-                          </h2>
-                          <div className="text-base text-justify font-[lato] ml-0 mr-auto text-current">
-                            {card.content}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          
           {/* Image */}
           <div className="flex-1">
             <div className="relative w-full lg:h-full shadow-lg">
@@ -567,6 +513,58 @@ export default function Home() {
           <div className="absolute inset-0 z-10 pointer-events-none">
             <div className="absolute inset-0 z-10 bg-[#f5f4f6]" />
           </div>
+
+          <div className="relative z-10 container mx-auto pt-16 lg:pt-32 pb-16 lg:pb-32">
+            <div>
+              <div className="transition-all ease-in-out duration-500 opacity-100 translate-y-0 flex flex-col gap-4 mb-6 items-start">
+                <p className="w-max max-w-full body-small !font-semibold text-[#0a001f]">
+                  Assured Safety
+                </p>
+                <h2 className="text-3xl lg:text-5xl font-bold block w-full ml-0 mr-auto text-gray-900">
+                  Delivering Trusted Safety Solutions
+                </h2>
+              </div>
+
+              <div className="grid grid-col-1 relative justify-start gap-10">
+                {[
+                  {
+                    title: "Mission Statement",
+                    content:
+                      "At Pacific Safety Solution Limited we are committed to safety and the principles and values guiding it rules in accordance with national and international safety laws and with customer service of the highest standard, services of high quality which are value specific to the needs of our customers, and our team with the knowledge, right tools, and work environment necessary to propel this company to the forefront of marine safety & survival.",
+                  },
+                  {
+                    title: "Vision Statement",
+                    content:
+                      "To become the best leading marine safety and survival provider company where our customers receive the best technical and professional services with the right team, tools and paper work to deliver a top-notch marine service.",
+                  },
+                ].map((card, index) => (
+                  <div
+                    key={index}
+                    className="group w-full relative overflow-hidden rounded-sm md:rounded-md lg:rounded-lg"
+                    style={{ flex: "0 0 calc(33.3333% - 26.6667px)" }}
+                  >
+                    <div
+                      className={`transition-all ease-in-out duration-500 delay-[${
+                        100 + index * 100
+                      }ms] opacity-100 translate-y-0 h-full`}
+                    >
+                      <div className="flex flex-col lg:flex-wrap h-full rounded-sm md:rounded-md lg:rounded-lg">
+                        <div className="flex flex-col lg:flex-wrap items-start py-2 lg:py-6 text-gray-900">
+                          <h2 className="text-xl font-bold  mb-2 ml-0 mr-auto text-current">
+                            {card.title}
+                          </h2>
+                          <div className="text-base text-justify font-[lato] ml-0 mr-auto text-current">
+                            {card.content}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* SVG ClipPath */}
           <svg
             className="absolute bottom-0 left-0"
