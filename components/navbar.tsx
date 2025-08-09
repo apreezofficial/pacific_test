@@ -1,16 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu, X, Info, Briefcase, Star, Phone, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleServices = () => setServicesOpen(!servicesOpen);
+
+  // Close services dropdown if clicked outside (desktop)
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setServicesOpen(false);
+      }
+    }
+    if (servicesOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [servicesOpen]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -20,158 +38,181 @@ export default function NavBar() {
     }
   }, [menuOpen]);
 
-  const services = [
-    { name: "Air Conditioner", href: "#air-conditioner" },
-    { name: "Fire Extinguisher", href: "#fire-extinguisher" },
-    { name: "User", href: "#user" },
-  ];
-
   return (
-    <header className="sticky top-0 z-[2000] bg-gradient-to-r from-[#5200f5] to-[#7f00ff] text-white shadow-lg transition-all duration-300">
-      <div className="container mx-auto px-6 lg:px-12 py-2 lg:py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3 group">
+    <header className="sticky top-0 z-[2000] bg-[#5200f5] text-white transition-colors duration-300 shadow-md">
+      <div className="container mx-auto px-6 lg:px-12 py-2 lg:py-6 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             width={200}
             height={200}
-            className="w-8 lg:w-10 h-auto transition-transform group-hover:scale-110"
+            className="w-6 lg:w-6 h-auto"
             src="/images/logo.png"
             alt="logo"
           />
-          <p className="text-base lg:text-2xl font-[lato] font-extrabold tracking-tight group-hover:text-gray-200 transition-colors">
+          <p className="text-base font-[lato] lg:text-2xl font-bold truncate">
             Pacific Safety Solution
           </p>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-10 text-sm font-medium">
-          <Link href="#about" className="relative hover:text-gray-200 transition-colors group">
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+          <Link href="#about" className="hover:text-gray-300 transition">
             About
-            <span className="absolute left-0 bottom-[-4px] w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link href="#products" className="relative hover:text-gray-200 transition-colors group">
+          <Link href="#products" className="hover:text-gray-300 transition">
             Products
-            <span className="absolute left-0 bottom-[-4px] w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <div className="relative group">
+
+          {/* Services dropdown */}
+          <div
+            ref={servicesRef}
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <button
               onClick={toggleServices}
-              className="flex items-center gap-2 hover:text-gray-200 transition-colors"
+              className="flex items-center gap-1 hover:text-gray-300 transition focus:outline-none"
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
             >
-              Services
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
-              />
+              Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? "rotate-180" : "rotate-0"}`} />
             </button>
-            <div
-              className={`absolute top-full left-0 mt-2 w-48 bg-[#5200f5] text-white rounded-lg shadow-xl transition-all duration-300 transform ${
-                servicesOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
-              }`}
-            >
-              {services.map((service) => (
+
+            {servicesOpen && (
+              <div className="absolute top-full mt-2 bg-white text-gray-800 rounded-md shadow-lg min-w-[180px] z-50">
                 <Link
-                  key={service.name}
-                  href={service.href}
-                  className="block px-4 py-2 text-sm hover:bg-[#7f00ff] rounded-lg transition-colors"
-                  onClick={() => setServicesOpen(false)}
+                  href="#air-conditional"
+                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
                 >
-                  {service.name}
+                  Air Conditional
                 </Link>
-              ))}
-            </div>
+                <Link
+                  href="#fire-extinguisher"
+                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
+                >
+                  Fire Extinguisher
+                </Link>
+                <Link
+                  href="#user"
+                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
+                >
+                  User
+                </Link>
+              </div>
+            )}
           </div>
-          <Link href="#contact" className="relative hover:text-gray-200 transition-colors group">
+
+          <Link href="#contact" className="hover:text-gray-300 transition">
             Contact
-            <span className="absolute left-0 bottom-[-4px] w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </nav>
 
         {/* Mobile Hamburger */}
         <button
           onClick={toggleMenu}
-          className="lg:hidden focus:outline-none p-2 rounded-lg hover:bg-[#7f00ff] transition-colors"
+          className="lg:hidden focus:outline-none"
           aria-label="Toggle menu"
         >
-          <Menu className="w-8 h-6" />
+          <Menu className="w-9 h-5" />
         </button>
       </div>
 
       {/* Side Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-gradient-to-b from-[#5200f5] to-[#7f00ff] text-white z-[3000] transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-64 bg-[#5200f5] text-white z-[3000] transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center px-6 py-6 border-b border-white/20">
-          <p className="text-xl font-extrabold tracking-wide">Menu</p>
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-lg hover:bg-[#7f00ff] transition-colors"
-            aria-label="Close menu"
-          >
+        <div className="flex justify-between items-center px-6 py-6">
+          <p className="text-lg font-bold">Menu</p>
+          <button onClick={toggleMenu} aria-label="Close menu">
             <X className="w-6 h-6" />
           </button>
         </div>
 
-        <nav className="flex flex-col space-y-4 px-6 py-4 text-lg font-medium">
+        <nav className="flex flex-col space-y-6 px-6 text-lg font-medium">
           <Link
             href="#about"
             onClick={toggleMenu}
-            className="flex items-center gap-3 hover:text-gray-200 hover:bg-[#7f00ff] rounded-lg px-3 py-2 transition-all"
+            className="flex items-center gap-3 hover:text-gray-300 transition"
           >
             <Info className="w-5 h-5" /> About
           </Link>
           <Link
             href="#products"
             onClick={toggleMenu}
-            className="flex items-center gap-3 hover:text-gray-200 hover:bg-[#7f00ff] rounded-lg px-3 py-2 transition-all"
+            className="flex items-center gap-3 hover:text-gray-300 transition"
           >
             <Briefcase className="w-5 h-5" /> Products
           </Link>
-          <div>
+
+          {/* Mobile Services Dropdown */}
+          <div className="flex flex-col">
             <button
-              onClick={toggleServices}
-              className="flex items-center gap-3 w-full text-left hover:text-gray-200 hover:bg-[#7f00ff] rounded-lg px-3 py-2 transition-all"
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex items-center gap-3 hover:text-gray-300 transition focus:outline-none"
+              aria-haspopup="true"
+              aria-expanded={servicesOpen}
             >
               <Star className="w-5 h-5" /> Services
               <ChevronDown
-                className={`w-4 h-4 ml-auto transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+                className={`w-4 h-4 ml-auto transition-transform ${
+                  servicesOpen ? "rotate-180" : "rotate-0"
+                }`}
               />
             </button>
-            <div
-              className={`flex flex-col pl-8 mt-2 space-y-2 transition-all duration-300 ${
-                servicesOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-              }`}
-            >
-              {services.map((service) => (
+
+            {servicesOpen && (
+              <div className="flex flex-col ml-8 mt-2 space-y-2 text-base">
                 <Link
-                  key={service.name}
-                  href={service.href}
-                  onClick={toggleMenu}
-                  className="text-sm hover:text-gray-200 hover:bg-[#7f00ff] rounded-lg px-3 py-2 transition-all"
+                  href="#air-conditional"
+                  onClick={() => {
+                    toggleMenu();
+                    setServicesOpen(false);
+                  }}
+                  className="hover:text-gray-300 transition"
                 >
-                  {service.name}
+                  Air Conditional
                 </Link>
-              ))}
-            </div>
+                <Link
+                  href="#fire-extinguisher"
+                  onClick={() => {
+                    toggleMenu();
+                    setServicesOpen(false);
+                  }}
+                  className="hover:text-gray-300 transition"
+                >
+                  Fire Extinguisher
+                </Link>
+                <Link
+                  href="#user"
+                  onClick={() => {
+                    toggleMenu();
+                    setServicesOpen(false);
+                  }}
+                  className="hover:text-gray-300 transition"
+                >
+                  User
+                </Link>
+              </div>
+            )}
           </div>
+
           <Link
             href="#contact"
             onClick={toggleMenu}
-            className="flex items-center gap-3 hover:text-gray-200 hover:bg-[#7f00ff] rounded-lg px-3 py-2 transition-all"
+            className="flex items-center gap-3 hover:text-gray-300 transition"
           >
             <Phone className="w-5 h-5" /> Contact
           </Link>
         </nav>
       </div>
 
-      {/* Transparent click area to close menu */}
+      {/* Transparent click area to close menu (no dark overlay) */}
       {menuOpen && (
-        <div
-          onClick={toggleទ
-          toggleMenu}
-          className="fixed inset-0 z-[2500] bg-black/30 lg:hidden transition-opacity duration-300"
-        />
+        <div onClick={toggleMenu} className="fixed inset-0 z-[2500] lg:hidden" />
       )}
     </header>
   );
-  }
+}
