@@ -1,34 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
-import { Menu, X, Info, Briefcase, Star, Phone, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, Info, Briefcase, Star, Phone } from "lucide-react";
 import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleServices = () => setServicesOpen(!servicesOpen);
-
-  // Close services dropdown if clicked outside (desktop)
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-        setServicesOpen(false);
-      }
-    }
-    if (servicesOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [servicesOpen]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -39,7 +19,7 @@ export default function NavBar() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-[2000] bg-[#5200f5] text-white transition-colors duration-300 shadow-md">
+    <header className="sticky top-0 z-[2000] bg-[#5200f5] text-white transition-colors duration-300">
       <div className="container mx-auto px-6 lg:px-12 py-2 lg:py-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
           <Image
@@ -50,7 +30,7 @@ export default function NavBar() {
             alt="logo"
           />
           <p className="text-base font-[lato] lg:text-2xl font-bold truncate">
-            Pacific Safety Solution
+            Pacific Safety Solution <p>Limited</p>
           </p>
         </Link>
 
@@ -59,50 +39,12 @@ export default function NavBar() {
           <Link href="#about" className="hover:text-gray-300 transition">
             About
           </Link>
-          <Link href="#products" className="hover:text-gray-300 transition">
+          <Link href="#services" className="hover:text-gray-300 transition">
             Products
           </Link>
-
-          {/* Services dropdown */}
-          <div
-            ref={servicesRef}
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button
-              onClick={toggleServices}
-              className="flex items-center gap-1 hover:text-gray-300 transition focus:outline-none"
-              aria-haspopup="true"
-              aria-expanded={servicesOpen}
-            >
-              Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? "rotate-180" : "rotate-0"}`} />
-            </button>
-
-            {servicesOpen && (
-              <div className="absolute top-full mt-2 bg-white text-gray-800 rounded-md shadow-lg min-w-[180px] z-50">
-                <Link
-                  href="#air-conditional"
-                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
-                >
-                  Air Conditional
-                </Link>
-                <Link
-                  href="#fire-extinguisher"
-                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
-                >
-                  Fire Extinguisher
-                </Link>
-                <Link
-                  href="#user"
-                  className="block px-4 py-2 hover:bg-[#5200f5] hover:text-white transition"
-                >
-                  User
-                </Link>
-              </div>
-            )}
-          </div>
-
+          <Link href="#services" className="hover:text-gray-300 transition">
+            Services
+          </Link>
           <Link href="#contact" className="hover:text-gray-300 transition">
             Contact
           </Link>
@@ -146,58 +88,13 @@ export default function NavBar() {
           >
             <Briefcase className="w-5 h-5" /> Products
           </Link>
-
-          {/* Mobile Services Dropdown */}
-          <div className="flex flex-col">
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center gap-3 hover:text-gray-300 transition focus:outline-none"
-              aria-haspopup="true"
-              aria-expanded={servicesOpen}
-            >
-              <Star className="w-5 h-5" /> Services
-              <ChevronDown
-                className={`w-4 h-4 ml-auto transition-transform ${
-                  servicesOpen ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            </button>
-
-            {servicesOpen && (
-              <div className="flex flex-col ml-8 mt-2 space-y-2 text-base">
-                <Link
-                  href="#air-conditional"
-                  onClick={() => {
-                    toggleMenu();
-                    setServicesOpen(false);
-                  }}
-                  className="hover:text-gray-300 transition"
-                >
-                  Air Conditional
-                </Link>
-                <Link
-                  href="#fire-extinguisher"
-                  onClick={() => {
-                    toggleMenu();
-                    setServicesOpen(false);
-                  }}
-                  className="hover:text-gray-300 transition"
-                >
-                  Fire Extinguisher
-                </Link>
-                <Link
-                  href="#user"
-                  onClick={() => {
-                    toggleMenu();
-                    setServicesOpen(false);
-                  }}
-                  className="hover:text-gray-300 transition"
-                >
-                  User
-                </Link>
-              </div>
-            )}
-          </div>
+          <Link
+            href="#services"
+            onClick={toggleMenu}
+            className="flex items-center gap-3 hover:text-gray-300 transition"
+          >
+            <Star className="w-5 h-5" /> Services 
+          </Link>
 
           <Link
             href="#contact"
@@ -211,7 +108,10 @@ export default function NavBar() {
 
       {/* Transparent click area to close menu (no dark overlay) */}
       {menuOpen && (
-        <div onClick={toggleMenu} className="fixed inset-0 z-[2500] lg:hidden" />
+        <div
+          onClick={toggleMenu}
+          className="fixed inset-0 z-[2500] lg:hidden"
+        />
       )}
     </header>
   );
